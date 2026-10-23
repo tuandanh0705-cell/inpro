@@ -48,6 +48,10 @@ img{max-width:100%;display:block}
 section{padding:88px 0;position:relative}
 .bg-grey{background:var(--grey)}
 .eyebrow{display:block;font-family:var(--font-brand);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--c1);margin-bottom:10px}
+h1,h2,h3{text-wrap:balance}
+.br-m{display:none}
+.br-d{display:inline}
+.nw{white-space:nowrap}
 h2{font-size:clamp(26px,3.4vw,42px);line-height:1.2;font-weight:800;color:var(--navy);letter-spacing:-.01em}
 h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{color:var(--mut);font-size:16.5px;margin-top:14px}
@@ -774,9 +778,9 @@ footer .ct a{margin:0}
   .wrap-wide{width:100%;padding:0 20px}
   .pg{grid-template-columns:1fr;max-width:520px;margin:0 auto}
   .why-rows{gap:56px}
-  .why-row,.why-row.reverse{grid-template-columns:1fr;gap:28px}
-  .why-row.reverse .why-vis{order:0}
-  .why-row.reverse .why-content{order:0}
+  .why-row,.why-row.reverse{grid-template-columns:1fr;gap:28px;display:flex;flex-direction:column}
+  .why-row .why-content, .why-row.reverse .why-content{order:1 !important}
+  .why-row .why-vis, .why-row.reverse .why-vis{order:2 !important}
   .why-vis{max-width:580px;margin:0 auto;width:100%}
   .tools-wrap{padding:0 24px}
   .tools-grid{grid-template-columns:repeat(2,1fr);column-gap:32px;row-gap:26px;margin-bottom:52px}
@@ -788,6 +792,9 @@ footer .ct a{margin:0}
 
 /* MOBILE VIEWPORT (max-width: 768px) */
 @media(max-width:768px){
+  .br-m{display:block}
+  .br-d{display:none}
+  
   /* Global Resets */
   section{padding:54px 0}
   .wrap{padding:0 18px}
@@ -903,6 +910,9 @@ footer .ct a{margin:0}
   
   /* Why Section */
   .why-rows{gap:40px;margin-top:24px}
+  .why-row,.why-row.reverse{display:flex;flex-direction:column;gap:20px}
+  .why-row .why-content,.why-row.reverse .why-content{order:1 !important}
+  .why-row .why-vis,.why-row.reverse .why-vis{order:2 !important}
   .why-tag{font-size:11px;padding:4px 10px;margin-bottom:8px}
   .why-content h3{font-size:19px;line-height:1.35;margin-bottom:10px}
   .why-desc{font-size:14px;line-height:1.65;margin-bottom:16px}
@@ -1064,7 +1074,7 @@ footer .ct a{margin:0}
 <header class="hero" id="top">
   <div class="wrap">
     <a href="#top" class="hero-logo" aria-label="INPRO.vn"><img src="assets/inpro-ngang-titled.png" alt="INPRO.vn - Earn More, Keep More, Increase Profit" width="220" height="50"></a>
-    <h1><span>HỆ THỐNG QUẢN TRỊ DOANH NGHIỆP THÔNG MINH</span> <span>VỮNG VÀNG TĂNG TRƯỞNG</span></h1>
+    <h1><span>HỆ THỐNG QUẢN TRỊ<br class="br-m"> DOANH&nbsp;NGHIỆP THÔNG&nbsp;MINH</span> <span>VỮNG&nbsp;VÀNG TĂNG&nbsp;TRƯỞNG</span></h1>
     <div class="hcols">
     <div>
       <div class="slogan">Tăng lời, vững lãi</div>
@@ -1091,7 +1101,7 @@ footer .ct a{margin:0}
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">Tính năng sản phẩm</span>
-      <h2>Giúp doanh nghiệp <em>bứt phá</em> với từng đồng vốn hiệu quả</h2>
+      <h2>Giúp doanh&nbsp;nghiệp <em>bứt&nbsp;phá</em><br class="br-m"> với từng đồng vốn hiệu&nbsp;quả</h2>
       <p class="lead"><b>Inpro OS Full Suite</b></p>
     </div>
     <div class="seg" id="seg">
@@ -1142,7 +1152,7 @@ footer .ct a{margin:0}
       <div class="val-header">
         <div class="head">
           <span class="eyebrow">Giá trị mang lại</span>
-          <h2>INPRO <em>thiết kế chuyên biệt</em> cho từng doanh&nbsp;nghiệp</h2>
+          <h2>INPRO <em>thiết kế chuyên&nbsp;biệt</em><br class="br-m"> cho từng doanh&nbsp;nghiệp</h2>
           <p class="lead">Mỗi doanh nghiệp là một bài toán riêng biệt. Inpro OS đồng hành và kiến tạo 4 trụ cột giá trị cốt lõi từ số liệu đến vận hành thực chiến.</p>
         </div>
         
@@ -1275,7 +1285,7 @@ footer .ct a{margin:0}
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">Tại sao chọn Inpro?</span>
-      <h2>Tại sao doanh nghiệp <em>lựa chọn</em> Inpro?</h2>
+      <h2>Tại sao doanh&nbsp;nghiệp<br class="br-m"> <em>lựa&nbsp;chọn</em> Inpro?</h2>
     </div>
     <div class="why-rows">
       
@@ -1283,7 +1293,7 @@ footer .ct a{margin:0}
       <div class="why-row rv">
         <div class="why-content">
           <span class="why-tag"><svg class="ico"><use href="#i-spark"/></svg> Lý do 01 · Tri thức ở lại</span>
-          <h3>1. AI tích lũy tri thức, phát triển cùng doanh nghiệp</h3>
+          <h3>1. AI tích lũy tri thức,<br class="br-m"> phát triển cùng doanh&nbsp;nghiệp</h3>
           <p class="why-desc">Inpro hướng tới xây dựng một hệ thống AI có khả năng học hỏi từ những nhân sự tốt nhất của doanh nghiệp về kinh nghiệm và phương pháp vận hành, giúp lưu giữ tri thức nội bộ, giảm sự phụ thuộc vào cá nhân và xây dựng nền tảng quản trị bền vững.</p>
           <div class="why-subgrid">
             <div class="why-subitem">
@@ -1324,16 +1334,11 @@ footer .ct a{margin:0}
         </div>
       </div>
 
-      <!-- Row 2: Dữ liệu rõ ràng (REVERSE: Visual Left, Content Right) -->
+      <!-- Row 2: Dữ liệu rõ ràng (REVERSE: Visual Left on Desktop, Content First on Mobile) -->
       <div class="why-row reverse rv">
-        <div class="why-vis">
-          <div class="why-vis-inner">
-            <img src="assets/ill-dashboard.jpg" alt="Dữ liệu rõ ràng, quản trị chủ động" loading="lazy" width="800" height="600">
-          </div>
-        </div>
         <div class="why-content">
           <span class="why-tag"><svg class="ico"><use href="#i-chart"/></svg> Lý do 02 · Dữ liệu tập trung</span>
-          <h3>2. Dữ liệu rõ ràng, quản trị chủ động</h3>
+          <h3>2. Dữ liệu rõ ràng,<br class="br-m"> quản trị chủ&nbsp;động</h3>
           <p class="why-desc">Thay vì phải tổng hợp dữ liệu phân mảnh và phán đoán nguyên nhân khi kết quả kinh doanh không đạt kỳ vọng, nhà quản lý có cơ sở để nhìn nhận toàn diện hiệu quả vận hành, xác định điểm nghẽn và đưa ra quyết định kịp thời. Inpro hướng đến việc giúp lãnh đạo hiểu không chỉ doanh nghiệp đang đạt kết quả gì, mà còn vì sao có kết quả đó.</p>
           <div class="why-subgrid">
             <div class="why-subitem">
@@ -1367,13 +1372,18 @@ footer .ct a{margin:0}
           </div>
           <a href="#register" class="why-link">+ Xem bảng điều khiển quản trị thông minh →</a>
         </div>
+        <div class="why-vis">
+          <div class="why-vis-inner">
+            <img src="assets/ill-dashboard.jpg" alt="Dữ liệu rõ ràng, quản trị chủ động" loading="lazy" width="800" height="600">
+          </div>
+        </div>
       </div>
 
       <!-- Row 3: Bài toán thực tế (Content Left, Visual Right) -->
       <div class="why-row rv">
         <div class="why-content">
           <span class="why-tag"><svg class="ico"><use href="#i-building"/></svg> Lý do 03 · Xuất phát thực chiến</span>
-          <h3>3. Giải pháp được xây dựng từ bài toán kinh doanh thực tế</h3>
+          <h3>3. Giải pháp được xây dựng<br class="br-m"> từ bài toán kinh doanh thực&nbsp;tế</h3>
           <p class="why-desc">Inpro được phát triển bởi CEO Thành Định, nhà sáng lập và lãnh đạo hệ sinh thái bán lẻ gồm 4 thương hiệu trong hệ sinh thái NoneLab - nền tảng đầu tư và đồng xây dựng thương hiệu dành cho thị trường Việt Nam và Đông Nam Á với doanh thu trung bình năm khoảng 600–700 tỷ đồng. Xuất phát từ chính những khó khăn trong quản lý và vận hành, Inpro được xây dựng để giải quyết các bài toán thực tế của doanh nghiệp, thay vì chỉ dừng lại ở lý thuyết phần mềm.</p>
           <div class="why-subgrid">
             <div class="why-subitem">
@@ -1423,13 +1433,8 @@ footer .ct a{margin:0}
         </div>
       </div>
 
-      <!-- Row 4: Lợi ích kinh tế (REVERSE: Visual Left, Content Right) -->
+      <!-- Row 4: Lợi ích kinh tế (REVERSE: Visual Left on Desktop, Content First on Mobile) -->
       <div class="why-row reverse rv">
-        <div class="why-vis">
-          <div class="why-vis-inner">
-            <img src="assets/ill-economic.jpg" alt="Lợi ích kinh tế - Inpro OS" loading="lazy" width="800" height="600">
-          </div>
-        </div>
         <div class="why-content">
           <span class="why-tag"><svg class="ico"><use href="#i-coin"/></svg> Lý do 04 · Hiệu quả kinh tế</span>
           <h3>4. Lợi ích kinh tế</h3>
@@ -1465,6 +1470,11 @@ footer .ct a{margin:0}
             </div>
           </div>
           <a href="#register" class="why-link">+ Nhận bảng phân tích hiệu quả kinh tế →</a>
+        </div>
+        <div class="why-vis">
+          <div class="why-vis-inner">
+            <img src="assets/ill-economic.jpg" alt="Lợi ích kinh tế - Inpro OS" loading="lazy" width="800" height="600">
+          </div>
         </div>
       </div>
 
@@ -1525,7 +1535,7 @@ footer .ct a{margin:0}
       <div class="bgrid rv">
         <img src="assets/mistory.png" alt="Mistory" title="Mistory" loading="lazy"><img src="assets/nerman.jpg" alt="Nerman" title="Nerman" loading="lazy">
         <img src="assets/lion-bartender.jpg" alt="Lion Bartender" title="Lion Bartender" loading="lazy"><img src="assets/menow.png" alt="Menow" title="Menow" loading="lazy">
-        <div class="bnote"><b>4 thương hiệu</b> đang dùng hệ thống trong vận hành hằng ngày</div>
+        <div class="bnote"><b>4 thương hiệu</b> đang dùng hệ thống<br class="br-m"> trong vận&nbsp;hành hằng&nbsp;ngày</div>
       </div>
     </div>
   </div>
@@ -1536,7 +1546,7 @@ footer .ct a{margin:0}
   <div class="tools-wrap">
     <div class="tools-head rv">
       <span class="tools-eyebrow">TÍCH HỢP ĐẦY ĐỦ CÁC GIẢI PHÁP</span>
-      <h2 class="tools-title"><em>Bộ công cụ</em> vận hành doanh nghiệp</h2>
+      <h2 class="tools-title"><em>Bộ công cụ</em> vận&nbsp;hành<br class="br-m"> doanh&nbsp;nghiệp</h2>
     </div>
 
     <!-- 3x3 Airy Minimal Grid with 3D Icons -->
@@ -1665,7 +1675,7 @@ footer .ct a{margin:0}
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">Bảng giá</span>
-      <h2>Chọn gói <em>phù hợp</em> với quy mô của bạn</h2>
+      <h2>Chọn gói <em>phù&nbsp;hợp</em><br class="br-m"> với quy mô của&nbsp;bạn</h2>
       <p class="lead">Trả trước 12 tháng để nhận ưu đãi tặng 100% phí setup.</p>
     </div>
     <div class="pg">
@@ -1706,7 +1716,7 @@ footer .ct a{margin:0}
 <section id="register" class="reg">
   <div class="reg-wrap rgrid">
     <div class="reg-left rv">
-      <h2>Tối ưu vận hành doanh nghiệp của bạn<br>ngay hôm nay!</h2>
+      <h2>Tối ưu vận&nbsp;hành doanh&nbsp;nghiệp<br class="br-m"> của bạn ngay&nbsp;hôm&nbsp;nay!</h2>
       <p class="reg-lead">Để Inpro đồng hành cùng doanh nghiệp của bạn trong quá trình tìm hiểu nhu cầu, giới thiệu giải pháp phù hợp và thiết kế hệ thống tối ưu riêng. Với kinh nghiệm đội ngũ và hệ sinh thái bán lẻ 600–700 tỷ/năm, Inpro cam kết hỗ trợ bạn cải thiện hiệu quả vận hành, tối ưu quy trình kinh doanh và bứt phá tăng trưởng bền vững.</p>
       
       <div class="glass">
