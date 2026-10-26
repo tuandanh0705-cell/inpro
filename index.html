@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>INPRO.vn – Phần mềm AI giúp nhà bán hàng tăng trưởng lợi nhuận | Tăng lời, vững lãi</title>
+<title>INPRO.vn – Phần mềm AI hỗ trợ nhà bán hàng tăng trưởng lợi nhuận | Tăng lời, vững lãi</title>
 <meta name="description" content="INPRO.vn gom dữ liệu TikTok Shop, Shopee, B2B, quảng cáo, KOC, CSKH về một chỗ. Số liệu realtime 30 giây, phân quyền, trợ lý AI. Xây từ hệ sinh thái bán lẻ Nonelab, doanh thu 600–700 tỷ/năm.">
 <meta name="referrer" content="origin">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,7 +82,7 @@ nav .btn{padding:10px 20px;font-size:14px}
 .burger{display:none;background:none;border:0;color:var(--navy);font-size:26px;cursor:pointer}
 
 /* HERO */
-.hero{padding:132px 0 150px;background:var(--hero);color:#fff;overflow:hidden}
+.hero{padding:132px 0 150px;background:var(--hero);color:#fff;overflow:hidden;position:relative}
 .hero:before{content:"";position:absolute;width:680px;height:680px;left:-200px;top:-220px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.32),transparent 65%)}
 .hero:after{content:"";position:absolute;inset:0;opacity:.45;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='84' height='146' viewBox='0 0 84 146' fill='none' stroke='white' stroke-opacity='.12' stroke-width='1.2'><path d='M42 0l42 24v48L42 96 0 72V24zM0 98l42 24v24M84 98L42 122'/></svg>");mask-image:linear-gradient(90deg,transparent 30%,#000 100%);-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000 100%)}
 .hero .wrap{position:relative;z-index:1}
@@ -211,6 +211,7 @@ nav .btn{padding:10px 20px;font-size:14px}
 .val-bottom-bar{display:flex;align-items:center;justify-content:flex-end;gap:20px;padding:4px 12px;flex:none}
 .vscroll-hint{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--mut)}
 .vscroll-hint svg{width:15px;height:15px;stroke:var(--c1);animation:hintBounce 1.8s infinite}
+.hint-mob{display:none}
 @keyframes hintBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 .vstep-dots{display:flex;gap:8px;align-items:center}
 .vdot{width:10px;height:10px;border-radius:50%;background:#dcdfe8;transition:.3s ease;cursor:pointer}
@@ -234,6 +235,8 @@ nav .btn{padding:10px 20px;font-size:14px}
 .why-subicon{width:36px;height:36px;border-radius:10px;background:var(--tint);color:var(--c1);display:grid;place-items:center;font-size:17px;flex:none;border:1px solid var(--tint-border);margin-top:2px}
 .why-subitem b{display:block;font-size:14px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:3px}
 .why-subitem span{display:block;font-size:12.5px;color:var(--mut);line-height:1.45}
+.why-subgrid .why-subitem:last-child:nth-child(odd){grid-column:1/-1}
+.rf-title{font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px}
 
 .why-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--c1);margin-top:22px;transition:.2s;width:fit-content}
 .why-link:hover{color:var(--c1-h);transform:translateX(4px)}
@@ -422,7 +425,7 @@ nav .btn{padding:10px 20px;font-size:14px}
 .gift{margin:14px 0 20px;font-size:13px;font-weight:600;color:var(--c1);background:var(--tint);padding:9px 12px;border-radius:10px;display:flex;gap:8px;align-items:center;border:1px solid var(--tint-border)}
 .pr ul{list-style:none;margin-bottom:26px;flex:1}
 .pr li{padding:7px 0 7px 26px;position:relative;font-size:14px}
-.pr li:before,.checks li:before{content:"";position:absolute;left:0;top:11px;width:16px;height:16px;border-radius:50%;background:var(--grad) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 12.5l4 4 8-9'/></svg>") center/10px no-repeat}
+.pr li:before,.checks li:before{content:"";position:absolute;left:0;top:11px;width:16px;height:16px;border-radius:50%;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 12.5l4 4 8-9'/></svg>") center/10px no-repeat,var(--grad)}
 .pr .btn{width:100%}
 .train{margin-top:30px;padding:22px 28px;border:1px solid var(--line);border-radius:var(--r);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--grey)}
 .train b{color:var(--navy)}.train small{color:var(--mut)}
@@ -907,6 +910,8 @@ footer .ct a{margin:0}
   .val-bottom-bar{justify-content:center;margin-top:8px;padding:4px}
   .vscroll-hint{font-size:12px}
   .vscroll-hint svg{width:13px;height:13px}
+  .hint-desk{display:none}
+  .hint-mob{display:inline}
   
   /* Why Section */
   .why-rows{gap:40px;margin-top:24px}
@@ -996,8 +1001,95 @@ footer .ct a{margin:0}
   .vstep-btn{padding:6px 2px;font-size:11px}
   .scard-chips{flex-direction:column;align-items:flex-start}
   .scard-chip{width:100%}
-  .mobile-bar{left:8px;right:8px;padding:6px 8px;gap:6px}
-  .mbar-btn{padding:9px 10px;font-size:12px}
+  .nav-cta-desktop{display:none}
+  .mbar-call span{display:none}
+  .mbar-btn{padding:0 12px}
+}
+
+/* ============================================================
+   MOBILE-FIRST FIXES (theo audit UX 24/10/2026)
+   - Lề an toàn 16-24px, safe-area (tai thỏ / thanh cử chỉ)
+   - Body >= 14px, line-height 1.5-1.6, H1 24-32px
+   - Vùng chạm >= 44-48px, thanh CTA dính đáy màn hình
+   - Mọi grid/flex item được phép co (min-width:0), không tràn ngang
+   ============================================================ */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+
+/* Drawer menu đóng: ẩn hẳn khỏi layout/tab-focus, không cho tràn ngang */
+@media(max-width:1080px){
+  nav{-webkit-backdrop-filter:none;backdrop-filter:none;background:#fff}
+  .menu-backdrop{z-index:49}
+  .menu{visibility:hidden;transition:right .32s cubic-bezier(.16,1,.3,1),visibility 0s linear .32s}
+  .menu.open{visibility:visible;transition:right .32s cubic-bezier(.16,1,.3,1),visibility 0s}
+  .burger{width:44px;height:44px;padding:12px 9px}
+  .burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .menu-close{width:44px;height:44px}
+  .menu-links a{min-height:48px}
+}
+
+@media(max-width:768px){
+  /* Lề an toàn + safe-area ngang */
+  .wrap{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+  .reg-wrap,.tools-wrap{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+
+  /* Grid/flex item luôn được co lại, nội dung dài tự xuống dòng */
+  .hcols>*,.zz>*,.rgrid>*,.about>*,.sme-banner>*,.fg>*,.pg>*,.tools-grid>*,.scard-inner>*,.scard-content,.why-row>*,.glass>*,.seg>*,.mods>*,.val-steps-nav>*{min-width:0}
+  h1,h2,h3,h4,p,li,b,span,small{overflow-wrap:anywhere}
+  .btn{white-space:normal;text-align:center;line-height:1.35;min-height:48px}
+
+  /* Hero: gọn, thấy giá trị + CTA sớm (logo đã có trên thanh menu) */
+  .hero{padding:84px 0 48px}
+  .hero-logo{display:none}
+  .hero h1{font-size:clamp(24px,7vw,30px);line-height:1.3;margin-bottom:14px !important}
+  .hero .slogan{font-size:19px}
+  .hero .lead{font-size:15px;line-height:1.6}
+  .hcard img{height:auto}
+
+  /* Typography: body >= 14px, line-height 1.5-1.6 */
+  .lead,.band p,.reg-lead,.zz p,.scard-desc,.why-desc,.sme-banner p,.tool-info p,.gc p,.pr .d,.pr li,.it b,.why-subitem span,.fnote,footer p,footer a,footer .ct{font-size:14px;line-height:1.6}
+  .scard-chip{font-size:12.5px}
+  .mods button{font-size:14px}
+  .vbar span{font-size:12px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .vbar a{white-space:nowrap;flex:none}
+  .scard-title,.zz h3,.why-content h3{font-size:19px}
+
+  /* Media không bao giờ vượt khung */
+  img,video,iframe{max-width:100%}
+
+  /* Thanh hành động dính đáy (thay cho 2 pill Hotline/Zalo che nội dung) */
+  .hotpills{display:none}
+  .mobile-bar{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:45;gap:8px;align-items:stretch;
+    padding:8px max(12px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));
+    background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(24,35,61,.14);
+    transition:transform .25s ease,visibility 0s linear 0s;
+  }
+  .mobile-bar.is-hidden{transform:translateY(110%);visibility:hidden;transition:transform .25s ease,visibility 0s linear .25s}
+  .mbar-btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;padding:0 14px;
+    border-radius:12px;font-size:14px;font-weight:700;line-height:1.2;white-space:nowrap;
+    border:1.5px solid var(--tint-border);background:var(--tint);color:var(--c1);
+  }
+  .mbar-btn .ico{font-size:18px;width:18px;height:18px}
+  .mbar-zalo{background:#0084ff;border-color:#0084ff;color:#fff}
+  .mbar-cta{flex:1;min-width:0;background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 6px 16px rgba(147,51,234,.32)}
+  .mbar-cta .ico{fill:none;stroke:#fff}
+  footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+
+  /* Thẻ lợi ích khu vực đăng ký: icon trái, tiêu đề + mô tả xếp dọc bên phải */
+  .gc{display:grid;grid-template-columns:32px minmax(0,1fr);column-gap:12px;row-gap:2px;align-items:start}
+  .gc-icon-box{grid-row:1 / span 2;grid-column:1}
+  .gc h4{grid-column:2;grid-row:1;overflow-wrap:normal}
+  .gc p{grid-column:2;grid-row:2}
+}
+
+/* Điện thoại nhỏ (<=480px): ghi đè sau khối 768px để đúng thứ tự cascade */
+@media(max-width:480px){
+  .wrap,.reg-wrap,.tools-wrap{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+  .mbar-btn{padding:0 12px}
+  .mbar-call{min-width:48px}
 }
 </style>
 </head>
@@ -1074,14 +1166,14 @@ footer .ct a{margin:0}
 <header class="hero" id="top">
   <div class="wrap">
     <a href="#top" class="hero-logo" aria-label="INPRO.vn"><img src="assets/inpro-ngang-titled.png" alt="INPRO.vn - Earn More, Keep More, Increase Profit" width="220" height="50"></a>
-    <h1><span>PHẦN MỀM AI GIÚP<br class="br-m"> NHÀ&nbsp;BÁN&nbsp;HÀNG</span> <span>TĂNG&nbsp;TRƯỞNG LỢI&nbsp;NHUẬN</span></h1>
+    <h1><span>PHẦN MỀM AI HỖ&nbsp;TRỢ<br class="br-m"> NHÀ&nbsp;BÁN&nbsp;HÀNG</span> <span>TĂNG&nbsp;TRƯỞNG LỢI&nbsp;NHUẬN</span></h1>
     <div class="hcols">
     <div>
       <div class="slogan">Tăng lời, vững lãi</div>
       <div class="en">Earn More. Keep More. Increase Profit.</div>
-      <p class="lead">INPRO.vn là công cụ hợp nhất dữ liệu kinh doanh từ online đến offline, tự động hóa vận hành và tối ưu các nguồn lực trong doanh nghiệp, góp phần nâng cao năng lực quản trị, giúp doanh nghiệp gia tăng lợi nhuận.</p>
+      <p class="lead">INPRO.vn là công cụ tự động hóa việc vận hành và tối ưu các nguồn lực, góp phần nâng cao năng lực quản trị, giúp doanh nghiệp gia tăng lợi nhuận.</p>
       <div class="cta">
-        <a href="#register" class="btn btn-w">Nhận Demo ngay →</a>
+        <a href="#register" class="btn btn-w">Đăng ký nhận Demo ngay →</a>
         <a href="#pricing" class="btn btn-t">Xem bảng giá</a>
       </div>
     </div>
@@ -1101,7 +1193,7 @@ footer .ct a{margin:0}
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">Tính năng sản phẩm</span>
-      <h2>Hỗ trợ doanh&nbsp;nghiệp <em>bứt&nbsp;phá</em><br class="br-m"> với từng đồng vốn hiệu&nbsp;quả</h2>
+      <h2>Cùng doanh&nbsp;nghiệp <em>bứt&nbsp;phá</em><br class="br-m"> dòng&nbsp;vốn</h2>
       <p class="lead"><b>INPRO.vn OS Full Suite</b></p>
     </div>
     <div class="seg" id="seg">
@@ -1139,7 +1231,7 @@ footer .ct a{margin:0}
         <div class="vplayer" id="vplayer"></div>
       </div>
     </div>
-    <a href="#register" class="btn btn-w">Đăng ký demo trải nghiệm →</a>
+    <a href="#register" class="btn btn-w">Đăng ký nhận Demo ngay →</a>
   </div>
 </section>
 
@@ -1186,13 +1278,13 @@ footer .ct a{margin:0}
             <div class="scard-content">
               <span class="scard-badge"><svg class="ico"><use href="#i-coin"/></svg> Giá trị 01 · Dòng tiền &amp; Lợi nhuận</span>
               <h3 class="scard-title">Giá trị tài chính</h3>
-              <p class="scard-desc">Minh bạch dòng tiền và hiệu quả đầu tư nhờ hệ sinh thái AI liên tục tổng hợp, cập nhật dữ liệu kinh doanh, giúp doanh nghiệp nắm rõ tình hình tài chính và xác định cơ hội tối ưu lợi nhuận.</p>
+              <p class="scard-desc">Ứng dụng hệ sinh thái AI trong việc liên tục tổng hợp, cập nhật và phân tích dữ liệu, giúp doanh nghiệp:</p>
               <div class="scard-chips">
-                <span class="scard-chip"><i>✓</i> Minh bạch dòng tiền realtime</span>
-                <span class="scard-chip"><i>✓</i> Tối ưu biên lợi nhuận ròng</span>
-                <span class="scard-chip"><i>✓</i> Đo lường ROI &amp; hiệu quả đầu tư</span>
+                <span class="scard-chip"><i>✓</i> Kiểm soát toàn diện các nguồn thu, chi</span>
+                <span class="scard-chip"><i>✓</i> Tối ưu biên lợi nhuận rõ ràng</span>
+                <span class="scard-chip"><i>✓</i> Đo lường ROI và hiệu quả đầu tư</span>
               </div>
-              <a href="#register" class="btn btn-p scard-btn">Tư vấn quản trị tài chính →</a>
+              <a href="#register" class="btn btn-p scard-btn">Đăng ký nhận Demo ngay →</a>
             </div>
             <div class="scard-vis">
               <img src="assets/val-1-finance.jpg" alt="Giá trị tài chính - INPRO.vn OS" loading="lazy" width="800" height="600">
@@ -1207,13 +1299,13 @@ footer .ct a{margin:0}
             <div class="scard-content">
               <span class="scard-badge"><svg class="ico"><use href="#i-gear"/></svg> Giá trị 02 · Tự động hóa &amp; Năng suất</span>
               <h3 class="scard-title">Giá trị vận hành</h3>
-              <p class="scard-desc">Nâng cao năng suất với nguồn lực hợp lý nhờ khả năng tự động hóa các công việc phù hợp, giảm thao tác thủ công và xử lý nhiều đầu việc hiệu quả hơn.</p>
+              <p class="scard-desc">Khả năng tự động hoá và tối ưu quy trình, giúp doanh nghiệp nâng cao năng suất và sử dụng nguồn lực hợp lý:</p>
               <div class="scard-chips">
-                <span class="scard-chip"><i>✓</i> Tự động hóa tác vụ lặp lại</span>
-                <span class="scard-chip"><i>✓</i> Giảm thao tác thủ công sai sót</span>
-                <span class="scard-chip"><i>✓</i> Xử lý nhiều đầu việc với nguồn lực tối ưu</span>
+                <span class="scard-chip"><i>✓</i> Giảm thao tác thủ công, tiết kiệm thời gian</span>
+                <span class="scard-chip"><i>✓</i> Phân bổ nhân sự và nguồn lực hiệu quả</span>
+                <span class="scard-chip"><i>✓</i> Xử lý đa nhiệm hiệu quả, tối ưu hiệu suất vận hành</span>
               </div>
-              <a href="#register" class="btn btn-p scard-btn">Khám phá tự động hóa vận hành →</a>
+              <a href="#register" class="btn btn-p scard-btn">Đăng ký nhận Demo ngay →</a>
             </div>
             <div class="scard-vis">
               <img src="assets/val-2-ops.jpg" alt="Giá trị vận hành - INPRO.vn OS" loading="lazy" width="800" height="600">
@@ -1228,13 +1320,13 @@ footer .ct a{margin:0}
             <div class="scard-content">
               <span class="scard-badge"><svg class="ico"><use href="#i-chart"/></svg> Giá trị 03 · Dữ liệu tập trung &amp; Điều hành</span>
               <h3 class="scard-title">Giá trị quản trị</h3>
-              <p class="scard-desc">Nâng tầm năng lực điều hành bằng hệ thống dữ liệu tập trung và thông minh, hỗ trợ nhà quản lý nhận diện vấn đề, đánh giá hiệu quả và đưa ra quyết định có cơ sở.</p>
+              <p class="scard-desc">Hệ thống dữ liệu tập trung và thông minh giúp doanh nghiệp nâng cao năng lực điều hành và ra quyết định:</p>
               <div class="scard-chips">
-                <span class="scard-chip"><i>✓</i> Dữ liệu tập trung đa kênh</span>
-                <span class="scard-chip"><i>✓</i> Nhận diện điểm nghẽn tức thời</span>
-                <span class="scard-chip"><i>✓</i> Ra quyết định dựa trên số liệu thực</span>
+                <span class="scard-chip"><i>✓</i> Đồng bộ thông tin, đảm bảo tính nhất quán</span>
+                <span class="scard-chip"><i>✓</i> Phát hiện vấn đề, theo dõi và đánh giá hiệu suất kịp thời</span>
+                <span class="scard-chip"><i>✓</i> Cung cấp cơ sở dữ liệu hỗ trợ hoạch định chiến lược</span>
               </div>
-              <a href="#register" class="btn btn-p scard-btn">Trải nghiệm hệ thống dữ liệu →</a>
+              <a href="#register" class="btn btn-p scard-btn">Đăng ký nhận Demo ngay →</a>
             </div>
             <div class="scard-vis">
               <img src="assets/val-3-mgmt.jpg" alt="Giá trị quản trị - INPRO.vn OS" loading="lazy" width="800" height="600">
@@ -1249,13 +1341,13 @@ footer .ct a{margin:0}
             <div class="scard-content">
               <span class="scard-badge"><svg class="ico"><use href="#i-trend"/></svg> Giá trị 04 · Tri thức &amp; Tăng trưởng</span>
               <h3 class="scard-title">Giá trị phát triển</h3>
-              <p class="scard-desc">Đồng hành cùng doanh nghiệp trong quá trình tích lũy tri thức, kế thừa kinh nghiệm và hoàn thiện phương thức vận hành, tạo nền tảng thích ứng và phát triển bền vững.</p>
+              <p class="scard-desc">Đồng hành cùng doanh nghiệp trong quá trình tích lũy tri thức, và không ngừng hoàn thiện vận hành, tạo nền tảng cho doanh nghiệp phát triển bền vững:</p>
               <div class="scard-chips">
-                <span class="scard-chip"><i>✓</i> Tích lũy tri thức &amp; quy trình chuẩn</span>
-                <span class="scard-chip"><i>✓</i> Kế thừa kinh nghiệm quản trị</span>
-                <span class="scard-chip"><i>✓</i> Nền tảng phát triển bền vững theo quy mô</span>
+                <span class="scard-chip"><i>✓</i> Hệ thống hóa dữ liệu và kinh nghiệm vận hành</span>
+                <span class="scard-chip"><i>✓</i> Chuẩn hóa quy trình, duy trì tri thức tổ chức</span>
+                <span class="scard-chip"><i>✓</i> Linh hoạt trước biến động, tạo đà phát triển dài hạn</span>
               </div>
-              <a href="#register" class="btn btn-p scard-btn">Xây dựng doanh nghiệp bền vững →</a>
+              <a href="#register" class="btn btn-p scard-btn">Đăng ký nhận Demo ngay →</a>
             </div>
             <div class="scard-vis">
               <img src="assets/val-4-growth.jpg" alt="Giá trị phát triển - INPRO.vn OS" loading="lazy" width="800" height="600">
@@ -1267,7 +1359,7 @@ footer .ct a{margin:0}
 
       <!-- Bottom bar: scroll indicator hint and progress dots -->
       <div class="val-bottom-bar">
-        <span class="vscroll-hint"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg> Lướt chuột hoặc vuốt để xem tiếp giá trị</span>
+        <span class="vscroll-hint"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg> <span class="hint-desk">Lướt chuột hoặc v</span><span class="hint-mob">V</span>uốt để xem tiếp giá trị</span>
         <div class="vstep-dots">
           <span class="vdot on" onclick="jumpValStep(0)"></span>
           <span class="vdot" onclick="jumpValStep(1)"></span>
@@ -1285,7 +1377,7 @@ footer .ct a{margin:0}
   <div class="wrap">
     <div class="head rv">
       <span class="eyebrow">Tại sao chọn INPRO.vn?</span>
-      <h2>Tại sao doanh&nbsp;nghiệp<br class="br-m"> <em>lựa&nbsp;chọn</em> INPRO.vn?</h2>
+      <h2>Tại sao doanh&nbsp;nghiệp<br class="br-m"> <em>nên lựa&nbsp;chọn</em> INPRO.vn?</h2>
     </div>
     <div class="why-rows">
       
@@ -1293,16 +1385,10 @@ footer .ct a{margin:0}
       <div class="why-row rv">
         <div class="why-content">
           <span class="why-tag"><svg class="ico"><use href="#i-spark"/></svg> Lý do 01 · Tri thức ở lại</span>
-          <h3>1. AI tích lũy tri thức,<br class="br-m"> phát triển cùng doanh&nbsp;nghiệp</h3>
-          <p class="why-desc">INPRO.vn hướng tới xây dựng một hệ thống AI có khả năng học hỏi từ những nhân sự tốt nhất của doanh nghiệp về kinh nghiệm và phương pháp vận hành, giúp lưu giữ tri thức nội bộ, giảm sự phụ thuộc vào cá nhân và xây dựng nền tảng quản trị bền vững.</p>
+          <h3>1. AI tích lũy tri thức,<br> phát triển cùng doanh&nbsp;nghiệp</h3>
+          <p class="why-desc">INPRO.vn hướng tới xây dựng một hệ thống AI có khả năng học hỏi từ những nhân sự tốt nhất của doanh nghiệp về kinh nghiệm và phương pháp vận hành:</p>
           <div class="why-subgrid">
-            <div class="why-subitem">
-              <div class="why-subicon"><svg class="ico"><use href="#i-spark"/></svg></div>
-              <div>
-                <b>Học hỏi nhân sự giỏi</b>
-                <span>Ghi nhận kinh nghiệm và phương pháp vận hành tối ưu</span>
-              </div>
-            </div>
+
             <div class="why-subitem">
               <div class="why-subicon"><svg class="ico"><use href="#i-shield"/></svg></div>
               <div>
@@ -1313,8 +1399,8 @@ footer .ct a{margin:0}
             <div class="why-subitem">
               <div class="why-subicon"><svg class="ico"><use href="#i-users"/></svg></div>
               <div>
-                <b>Giảm phụ thuộc cá nhân</b>
-                <span>Chuẩn hóa cách làm để nhân sự mới kế thừa ngay</span>
+                <b>Giảm thiểu phụ thuộc cá nhân</b>
+                <span>Chuẩn hoá cách làm để nhân sự kế thừa mỗi ngày</span>
               </div>
             </div>
             <div class="why-subitem">
@@ -1325,7 +1411,7 @@ footer .ct a{margin:0}
               </div>
             </div>
           </div>
-          <a href="#register" class="why-link">+ Trải nghiệm tính năng AI tri thức →</a>
+          <a href="#register" class="why-link">Đăng ký nhận Demo ngay →</a>
         </div>
         <div class="why-vis">
           <div class="why-vis-inner">
@@ -1339,13 +1425,13 @@ footer .ct a{margin:0}
         <div class="why-content">
           <span class="why-tag"><svg class="ico"><use href="#i-chart"/></svg> Lý do 02 · Dữ liệu tập trung</span>
           <h3>2. Dữ liệu rõ ràng,<br class="br-m"> quản trị chủ&nbsp;động</h3>
-          <p class="why-desc">Thay vì phải tổng hợp dữ liệu phân mảnh và phán đoán nguyên nhân khi kết quả kinh doanh không đạt kỳ vọng, nhà quản lý có cơ sở để nhìn nhận toàn diện hiệu quả vận hành, xác định điểm nghẽn và đưa ra quyết định kịp thời. INPRO.vn hướng đến việc giúp lãnh đạo hiểu không chỉ doanh nghiệp đang đạt kết quả gì, mà còn vì sao có kết quả đó.</p>
+          <p class="why-desc">Thay vì phải tổng hợp dữ liệu phân mảnh và phán đoán nguyên nhân khi kết quả kinh doanh không đạt kỳ vọng, nhà quản lý có cơ sở để nhìn nhận toàn diện hiệu quả vận hành.</p>
           <div class="why-subgrid">
             <div class="why-subitem">
               <div class="why-subicon"><svg class="ico"><use href="#i-chart"/></svg></div>
               <div>
                 <b>Số liệu realtime đa kênh</b>
-                <span>Gom toàn bộ dữ liệu Shopee, TikTok, B2B về một nơi</span>
+                <span>Gom toàn bộ dữ liệu trên các sàn TMĐT, B2B về một nơi</span>
               </div>
             </div>
             <div class="why-subitem">
@@ -1359,18 +1445,12 @@ footer .ct a{margin:0}
               <div class="why-subicon"><svg class="ico"><use href="#i-check"/></svg></div>
               <div>
                 <b>Ra quyết định kịp thời</b>
-                <span>Cơ sở số liệu vững chắc, tự tin điều chỉnh chiến lược</span>
+                <span>Cơ sở dữ liệu vững chắc, tự tin điều chỉnh chiến lược</span>
               </div>
             </div>
-            <div class="why-subitem">
-              <div class="why-subicon"><svg class="ico"><use href="#i-spark"/></svg></div>
-              <div>
-                <b>Thấu hiểu nguyên nhân</b>
-                <span>Biết rõ tại sao đạt kết quả đó để tối ưu và nhân bản</span>
-              </div>
-            </div>
+
           </div>
-          <a href="#register" class="why-link">+ Xem bảng điều khiển quản trị thông minh →</a>
+          <a href="#register" class="why-link">Đăng ký nhận Demo ngay →</a>
         </div>
         <div class="why-vis">
           <div class="why-vis-inner">
@@ -1383,35 +1463,29 @@ footer .ct a{margin:0}
       <div class="why-row rv">
         <div class="why-content">
           <span class="why-tag"><svg class="ico"><use href="#i-building"/></svg> Lý do 03 · Xuất phát thực chiến</span>
-          <h3>3. Giải pháp được xây dựng<br class="br-m"> từ bài toán kinh doanh thực&nbsp;tế</h3>
-          <p class="why-desc">INPRO.vn được phát triển bởi CEO Thành Định, nhà sáng lập và lãnh đạo hệ sinh thái bán lẻ gồm 4 thương hiệu trong hệ sinh thái NoneLab - nền tảng đầu tư và đồng xây dựng thương hiệu dành cho thị trường Việt Nam và Đông Nam Á với doanh thu trung bình năm khoảng 600–700 tỷ đồng. Xuất phát từ chính những khó khăn trong quản lý và vận hành, INPRO.vn được xây dựng để giải quyết các bài toán thực tế của doanh nghiệp, thay vì chỉ dừng lại ở lý thuyết phần mềm.</p>
+          <h3>3. Giải pháp được xây dựng<br> từ bài toán thực&nbsp;tế</h3>
+          <p class="why-desc">INPRO.vn được phát triển bởi CEO Thành Định, nhà sáng lập và lãnh đạo 4 thương hiệu trong hệ sinh thái NoneLab - nền tảng đầu tư và đồng xây dựng thương hiệu dành cho thị trường Việt Nam và Đông Nam Á.</p>
           <div class="why-subgrid">
             <div class="why-subitem">
               <div class="why-subicon"><svg class="ico"><use href="#i-building"/></svg></div>
               <div>
-                <b>Doanh số 600–700 tỷ/năm</b>
+                <b>Doanh thu 600–700 tỷ/năm</b>
                 <span>Kiểm chứng trên hệ sinh thái bán lẻ NoneLab</span>
               </div>
             </div>
             <div class="why-subitem">
               <div class="why-subicon"><svg class="ico"><use href="#i-gear"/></svg></div>
               <div>
-                <b>Giải quyết khó khăn thật</b>
-                <span>Xử lý triệt để bài toán tồn kho, dòng tiền, đơn hàng</span>
+                <b>Xuất phát từ những khó khăn thực tế</b>
+                <span>Những vấn đề gặp phải trong quá trình quản lý và vận hành</span>
               </div>
             </div>
-            <div class="why-subitem">
-              <div class="why-subicon"><svg class="ico"><use href="#i-shield"/></svg></div>
-              <div>
-                <b>Không lý thuyết suông</b>
-                <span>Mỗi tính năng là một lời giải cho nút thắt thực tế</span>
-              </div>
-            </div>
+
             <div class="why-subitem">
               <div class="why-subicon"><svg class="ico"><use href="#i-users"/></svg></div>
               <div>
                 <b>Cố vấn từ Founder</b>
-                <span>Đồng hành chuyển giao từ kinh nghiệm thực chiến</span>
+                <span>Đào tạo, chia sẻ và chuyển giao kinh nghiệm thực chiến</span>
               </div>
             </div>
           </div>
@@ -1424,7 +1498,7 @@ footer .ct a{margin:0}
               <img src="assets/menow.png" alt="Menow" title="Menow">
             </div>
           </div>
-          <a href="#register" class="why-link">+ Tìm hiểu thêm về bài toán thực tế →</a>
+          <a href="#register" class="why-link">Đăng ký nhận Demo ngay →</a>
         </div>
         <div class="why-vis">
           <div class="why-vis-inner">
@@ -1438,7 +1512,7 @@ footer .ct a{margin:0}
         <div class="why-content">
           <span class="why-tag"><svg class="ico"><use href="#i-coin"/></svg> Lý do 04 · Hiệu quả kinh tế</span>
           <h3>4. Lợi ích kinh tế</h3>
-          <p class="why-desc">INPRO.vn giúp doanh nghiệp đánh giá hiệu quả đầu tư thông qua các chỉ số cụ thể như chi phí tiết kiệm, năng suất cải thiện và lợi nhuận gia tăng, từ đó xác định giá trị thực tế mà hệ thống mang lại.</p>
+          <p class="why-desc">INPRO.vn giúp doanh nghiệp đánh giá hiệu quả đầu tư thông qua các chỉ số cụ thể, từ đó xác định giá trị thực tế mà hệ thống mang lại.</p>
           <div class="why-subgrid">
             <div class="why-subitem">
               <div class="why-subicon"><svg class="ico"><use href="#i-coin"/></svg></div>
@@ -1451,25 +1525,19 @@ footer .ct a{margin:0}
               <div class="why-subicon"><svg class="ico"><use href="#i-trend"/></svg></div>
               <div>
                 <b>Nâng cao năng suất</b>
-                <span>Tự động hóa tác vụ lặp, xử lý đơn nhanh gấp 3 lần</span>
+                <span>Tự động hoá tác vụ lặp, xử lý đơn nhanh</span>
               </div>
             </div>
             <div class="why-subitem">
               <div class="why-subicon"><svg class="ico"><use href="#i-spark"/></svg></div>
               <div>
                 <b>Gia tăng lợi nhuận</b>
-                <span>Tối ưu biên lợi nhuận ròng trên từng đồng vốn</span>
+                <span>Tối ưu biên lợi nhuận trên từng đồng vốn</span>
               </div>
             </div>
-            <div class="why-subitem">
-              <div class="why-subicon"><svg class="ico"><use href="#i-target"/></svg></div>
-              <div>
-                <b>Đo lường ROI rõ ràng</b>
-                <span>Đánh giá chính xác giá trị thực tế mang lại từng ngày</span>
-              </div>
-            </div>
+
           </div>
-          <a href="#register" class="why-link">+ Nhận bảng phân tích hiệu quả kinh tế →</a>
+          <a href="#register" class="why-link">Đăng ký nhận Demo ngay →</a>
         </div>
         <div class="why-vis">
           <div class="why-vis-inner">
@@ -1483,7 +1551,7 @@ footer .ct a{margin:0}
         <div class="why-content">
           <span class="why-tag"><svg class="ico"><use href="#i-book"/></svg> Lý do 05 · Tích lũy tri thức</span>
           <h3>5. Lợi ích tri thức</h3>
-          <p class="why-desc">INPRO.vn giúp doanh nghiệp lưu giữ và kế thừa kinh nghiệm, phương pháp làm việc hiệu quả của đội ngũ, hạn chế thất thoát tri thức khi nhân sự thay đổi và tạo nền tảng để hệ thống vận hành ngày càng hiệu quả. Giá trị này có thể được theo dõi qua mức độ chuẩn hóa quy trình, thời gian đào tạo nhân sự mới và khả năng ứng dụng tri thức vào hoạt động thực tế.</p>
+          <p class="why-desc">INPRO.vn giúp doanh nghiệp chuẩn hóa quy trình, rút ngắn thời gian đào tạo nhân sự mới và khả năng ứng dụng tri thức vào hoạt động thực tế.</p>
           <div class="why-subgrid">
             <div class="why-subitem">
               <div class="why-subicon"><svg class="ico"><use href="#i-book"/></svg></div>
@@ -1496,25 +1564,19 @@ footer .ct a{margin:0}
               <div class="why-subicon"><svg class="ico"><use href="#i-cal"/></svg></div>
               <div>
                 <b>Rút ngắn đào tạo</b>
-                <span>Giảm thời gian đào tạo nhân sự mới bắt nhịp việc</span>
+                <span>Giảm thời gian đào tạo nhân sự mới</span>
               </div>
             </div>
-            <div class="why-subitem">
-              <div class="why-subicon"><svg class="ico"><use href="#i-shield"/></svg></div>
-              <div>
-                <b>Hạn chế thất thoát</b>
-                <span>Nhân sự thay đổi, bí quyết công ty vẫn được lưu trữ</span>
-              </div>
-            </div>
+
             <div class="why-subitem">
               <div class="why-subicon"><svg class="ico"><use href="#i-check"/></svg></div>
               <div>
                 <b>Ứng dụng thực tế cao</b>
-                <span>Tri thức được đo lường và cải tiến liên tục hàng ngày</span>
+                <span>Tri thức được đo lường và cải tiến liên tục hằng ngày</span>
               </div>
             </div>
           </div>
-          <a href="#register" class="why-link">+ Xây dựng hệ thống tri thức doanh nghiệp →</a>
+          <a href="#register" class="why-link">Đăng ký nhận Demo ngay →</a>
         </div>
         <div class="why-vis">
           <div class="why-vis-inner">
@@ -1559,97 +1621,88 @@ footer .ct a{margin:0}
         </div>
         <div class="tool-info">
           <h4>Công việc</h4>
-          <p>Quản lý công việc khoa học, tăng hiệu suất đội nhóm.</p>
+          <p>Quản lý nhiệm vụ, phân công và theo dõi tiến độ thực hiện.</p>
         </div>
       </div>
 
       <!-- 2. Marketing automation -->
       <div class="tool-item">
         <div class="tool-icon-box">
-          <img src="assets/tools/tool-marketing.png" alt="Marketing automation" loading="lazy" width="70" height="71">
+          <img src="assets/tools/tool-marketing.png" alt="KOLs/KOCs" loading="lazy" width="70" height="71">
         </div>
         <div class="tool-info">
-          <h4>Marketing automation</h4>
-          <p>Chiến dịch marketing đa kênh, phân tích hiệu quả và tối ưu.</p>
+          <h4>KOLs/KOCs</h4>
+          <p>Quản lý đối tác, chiến dịch hợp tác và hiệu quả truyền thông.</p>
         </div>
       </div>
 
       <!-- 3. Sales -->
       <div class="tool-item">
         <div class="tool-icon-box">
-          <img src="assets/tools/tool-sales.png" alt="Sales" loading="lazy" width="70" height="71">
+          <img src="assets/tools/tool-crm.png" alt="Khách hàng" loading="lazy" width="70" height="71">
         </div>
         <div class="tool-info">
-          <h4>Sales</h4>
-          <p>Tự động hóa quy trình bán hàng từ leads đến chốt đơn và CSKH</p>
+          <h4>Khách hàng</h4>
+          <p>Tập trung dữ liệu, theo dõi lịch sử tương tác và chăm sóc khách hàng.</p>
         </div>
       </div>
 
       <!-- 4. Tài chính & kế toán -->
       <div class="tool-item">
         <div class="tool-icon-box">
-          <img src="assets/tools/tool-finance.png" alt="Tài chính & kế toán" loading="lazy" width="70" height="71">
+          <img src="assets/tools/tool-sales.png" alt="B2B" loading="lazy" width="70" height="71">
         </div>
         <div class="tool-info">
-          <h4>Tài chính &amp; kế toán</h4>
-          <p>Quản lý tài chính chính xác, báo cáo chi tiết, tối ưu quy trình.</p>
+          <h4>B2B</h4>
+          <p>Quản lý đối tác, đơn hàng bán sỉ và hiệu quả kinh doanh.</p>
         </div>
       </div>
 
       <!-- 5. Khách hàng -->
       <div class="tool-item">
         <div class="tool-icon-box">
-          <img src="assets/tools/tool-crm.png" alt="Khách hàng" loading="lazy" width="70" height="71">
+          <img src="assets/tools/tool-warehouse.png" alt="Kho vận" loading="lazy" width="70" height="71">
         </div>
         <div class="tool-info">
-          <h4>Khách hàng</h4>
-          <p>Quản lý dữ liệu khách hàng tập trung, chăm sóc dễ dàng và hiệu quả.</p>
+          <h4>Kho vận</h4>
+          <p>Kiểm soát tồn kho, xuất nhập hàng và luân chuyển hàng hóa.</p>
         </div>
       </div>
 
       <!-- 6. Kho vận -->
       <div class="tool-item">
         <div class="tool-icon-box">
-          <img src="assets/tools/tool-warehouse.png" alt="Kho vận" loading="lazy" width="70" height="71">
+          <img src="assets/tools/tool-finance.png" alt="Tài chính kế toán" loading="lazy" width="70" height="71">
         </div>
         <div class="tool-info">
-          <h4>Kho vận</h4>
-          <p>Quản lý tồn kho, nhập xuất hàng hóa và tối ưu hóa chuỗi cung ứng.</p>
+          <h4>Tài chính kế toán</h4>
+          <p>Theo dõi dòng tiền, đối soát giao dịch và kiểm soát lợi nhuận.</p>
         </div>
       </div>
 
       <!-- 7. Nhân sự -->
       <div class="tool-item">
         <div class="tool-icon-box">
-          <img src="assets/tools/tool-hr.png" alt="Nhân sự" loading="lazy" width="70" height="71">
+          <img src="assets/tools/tool-report.png" alt="Báo cáo" loading="lazy" width="70" height="71">
         </div>
         <div class="tool-info">
-          <h4>Nhân sự</h4>
-          <p>Quản lý nhân sự đơn giản, từ tuyển dụng đến chấm công, tính lương.</p>
+          <h4>Báo cáo</h4>
+          <p>Tổng hợp dữ liệu, trực quan hóa chỉ số và đánh giá hiệu quả kinh doanh.</p>
         </div>
       </div>
 
       <!-- 8. Báo cáo -->
       <div class="tool-item">
         <div class="tool-icon-box">
-          <img src="assets/tools/tool-report.png" alt="Báo cáo" loading="lazy" width="70" height="71">
-        </div>
-        <div class="tool-info">
-          <h4>Báo cáo</h4>
-          <p>Báo cáo trực quan, hỗ trợ ra quyết định nhanh chóng và chính xác</p>
-        </div>
-      </div>
-
-      <!-- 9. Cài đặt -->
-      <div class="tool-item">
-        <div class="tool-icon-box">
           <img src="assets/tools/tool-settings.png" alt="Cài đặt" loading="lazy" width="70" height="71">
         </div>
         <div class="tool-info">
           <h4>Cài đặt</h4>
-          <p>Tùy chỉnh hệ thống linh hoạt theo nhu cầu vận hành của doanh nghiệp.</p>
+          <p>Thiết lập hệ thống, phân quyền người dùng và tùy chỉnh vận hành.</p>
         </div>
       </div>
+
+
 
     </div>
 
@@ -1658,7 +1711,7 @@ footer .ct a{margin:0}
       <div class="sme-banner-content">
         <h3>Sự lựa chọn của SMES</h3>
         <p>Giải pháp toàn diện giúp tối ưu hóa quy trình, tăng trưởng doanh thu và tiết kiệm chi phí cho doanh nghiệp vừa và nhỏ.</p>
-        <a href="#register" class="btn-sme-demo">Nhận demo ứng dụng</a>
+        <a href="#register" class="btn-sme-demo">Đăng ký nhận Demo ngay</a>
       </div>
       <div class="sme-banner-vis">
         <img src="assets/sme-mockup-trans.png" alt="INPRO.vn OS - Sự lựa chọn của SMES" loading="lazy" width="1280" height="720">
@@ -1764,47 +1817,49 @@ footer .ct a{margin:0}
     <form id="form" class="reg-card rv lead-form">
       <div id="fields">
         <div class="reg-card-head">
-          <h3 class="reg-card-title">ĐĂNG KÝ TƯ VẤN VÀ DÙNG THỬ</h3>
-          <p class="reg-card-sub">Miễn phí ngay hôm nay</p>
+          <h3 class="reg-card-title">ĐĂNG KÝ TRẢI NGHIỆM NGAY</h3>
+          <p class="reg-card-sub">Nhận demo toàn bộ tính năng phần mềm</p>
+        </div>
+        <p class="rf-title">Thông tin đăng ký</p>
+
+        <div class="rf-field">
+          <input type="text" name="name" required placeholder="Họ và Tên" class="rf-input" autocomplete="name" aria-label="Họ và tên">
         </div>
 
         <div class="rf-field">
-          <input type="text" name="name" required placeholder="Họ và Tên" class="rf-input">
+          <input type="tel" name="phone" required pattern="[0-9+ ]{9,13}" placeholder="Số điện thoại" class="rf-input" inputmode="tel" autocomplete="tel" aria-label="Số điện thoại">
         </div>
 
         <div class="rf-field">
-          <input type="tel" name="phone" required pattern="[0-9+ ]{9,13}" placeholder="Số điện thoại" class="rf-input">
+          <input type="email" name="email" placeholder="Email" class="rf-input" inputmode="email" autocomplete="email" aria-label="Email">
         </div>
 
         <div class="rf-field">
-          <input type="email" name="email" placeholder="Email" class="rf-input">
-        </div>
-
-        <div class="rf-field">
-          <select name="company_size" class="rf-select" onchange="this.classList.toggle('has-value', !!this.value)">
-            <option value="" disabled selected>Quy mô công ty</option>
-            <option value="Dưới 10 nhân sự">Dưới 10 nhân sự</option>
-            <option value="10 - 50 nhân sự">10 - 50 nhân sự</option>
-            <option value="50 - 200 nhân sự">50 - 200 nhân sự</option>
-            <option value="Trên 200 nhân sự">Trên 200 nhân sự</option>
+          <select name="industry" required class="rf-select" onchange="this.classList.toggle('has-value', !!this.value)">
+            <option value="" disabled selected>Ngành hàng kinh doanh</option>
+            <option value="Mẹ và bé">Mẹ và bé</option>
+            <option value="FMCG / Hàng tiêu dùng">FMCG / Hàng tiêu dùng</option>
+            <option value="Thời trang">Thời trang</option>
+            <option value="Ngành hàng khác">Ngành hàng khác</option>
           </select>
         </div>
 
         <div class="rf-field">
-          <select name="consult_time" class="rf-select" onchange="this.classList.toggle('has-value', !!this.value)">
-            <option value="" disabled selected>Khung giờ tư vấn phù hợp</option>
-            <option value="Giờ hành chính (8h30 - 12h00)">Giờ hành chính (8h30 - 12h00)</option>
-            <option value="Buổi chiều (13h30 - 17h30)">Buổi chiều (13h30 - 17h30)</option>
-            <option value="Buổi tối (18h00 - 20h00)">Buổi tối (18h00 - 20h00)</option>
-            <option value="Cuối tuần">Cuối tuần</option>
+          <select name="need" required class="rf-select" onchange="this.classList.toggle('has-value', !!this.value)">
+            <option value="" disabled selected>Nhu cầu quan tâm</option>
+            <option value="Tư vấn tổng thể">Tư vấn tổng thể</option>
+            <option value="Quản lý bán hàng đa kênh">Quản lý bán hàng đa kênh</option>
+            <option value="Theo dõi chi phí và lợi nhuận">Theo dõi chi phí và lợi nhuận</option>
+            <option value="Quản lý quảng cáo, KOC/Affiliate">Quản lý quảng cáo, KOC/Affiliate</option>
+            <option value="Quản lý chăm sóc khách hàng">Quản lý chăm sóc khách hàng</option>
+            <option value="Quản lý bán sỉ và đại lý">Quản lý bán sỉ và đại lý</option>
+            <option value="Quản lý dữ liệu khách hàng">Quản lý dữ liệu khách hàng</option>
           </select>
         </div>
 
-        <div class="rf-field">
-          <textarea name="message" placeholder="Để lại lời nhắn" rows="3" class="rf-textarea"></textarea>
-        </div>
 
-        <button class="rf-submit" type="submit">Đăng ký miễn phí</button>
+
+        <button class="rf-submit" type="submit">Đăng ký tư vấn</button>
         <p class="fnote">Thông tin của bạn được bảo mật và chỉ dùng để tư vấn.</p>
       </div>
       <div class="ok" id="ok">
@@ -1891,12 +1946,12 @@ const ico=n=>'<svg class="ico"><use href="#i-'+n+'"/></svg>';
 const DATA={
   ql:[
     {i:'chart',t:'Quản lý bán hàng đa kênh',img:'assets/ql-1-sales.jpg',it:[
-      'Màn hình Realtime (30 giây) phát hiện biến động về dòng tiền và hiệu suất từng thương hiệu, đề xuất giải pháp vận hành.',
-      'Trợ lý ADs AI theo dõi các chỉ số và đề xuất điều chỉnh tối ưu từng chiến dịch quảng cáo trên các nền tảng TMĐT.',
-      'Tự động phân tích và phân loại thông minh từng sản phẩm về các kênh bán để theo dõi tỷ lệ chuyển đổi từng đơn hàng.',
-      'Đối chiếu và kiểm soát các nguồn tiền, tự động tính toán lãi thực cho doanh nghiệp.',
-      'Thiết lập mục tiêu KPI và tự động phân bổ doanh thu phù hợp theo từng thương hiệu.',
-      'Tự động tạo lập và tổng hợp các báo cáo theo kỳ với từng hạng mục chi tiết.']},
+      'Màn hình Realtime cập nhật dữ liệu mỗi 30 giây, phát hiện biến động dòng tiền và hiệu suất, đề xuất giải pháp vận hành.',
+      'Trợ lý ADs AI theo dõi chỉ số, tối ưu các chiến dịch trên nền tảng TMĐT.',
+      'Tự động phân loại sản phẩm theo kênh bán, theo dõi tỷ lệ chuyển đổi đơn hàng.',
+      'Đối chiếu và kiểm soát các nguồn tiền, tự động tính toán lợi nhuận thực.',
+      'Thiết lập mục tiêu, tự động phân bổ doanh thu theo thương hiệu.',
+      'Tự động tạo lập và tổng hợp các báo cáo định kỳ theo từng hạng mục chi tiết.']},
     {i:'video',t:'Quản lý KOC, Affiliate và chiến dịch nội dung',img:'assets/ql-2-koc.jpg',it:[
       'Tìm kiếm, phân loại và đề xuất KOC phù hợp với từng thương hiệu.',
       'Cập nhật và lưu trữ tiến trình hợp tác với KOC từ A-Z.',
@@ -1905,10 +1960,10 @@ const DATA={
       'Tổng hợp thông tin, phân chia nhóm khách hàng và xử lý vấn đề phát sinh của khách hàng trên các nền tảng.',
       'Theo dõi tiến độ xử lý các vấn đề, phân tích lỗi và hiệu suất CSKH.']},
     {i:'building',t:'Quản trị bán sỉ B2B qua nhà phân phối và đại lý',img:'assets/ql-4-b2b.jpg',it:[
-      'Thiết lập mục tiêu kinh doanh từng nhân viên, đối tác trong từng giai đoạn của tổ chức.',
+      'Thiết lập mục tiêu kinh doanh theo nhân viên, đối tác và từng giai đoạn.',
       'Theo dõi và tổng hợp kết quả kinh doanh B2B và cập nhật tiến độ KPI theo từng thương hiệu.',
-      'Xử lý toàn bộ quy trình đơn bán sỉ: kiểm tra và xác nhận đơn hàng, xuất hóa đơn, phiếu xuất kho và hỗ trợ in hoặc tải chứng từ.',
-      'Phát triển mạng lưới đối tác từ các lịch sử dữ liệu về nhà phân phối, đơn hàng, doanh thu, kho nhận hàng và thông tin xuất hóa đơn.']}
+      'Xử lý toàn bộ quy trình đơn bán sỉ.',
+      'Phân tích dữ liệu nhà phân phối, đơn hàng, doanh thu và thông tin giao nhận để mở rộng mạng lưới.']}
   ],
   kv:[
     {i:'box',t:'Quản lý kho và tồn kho',img:'assets/kv-1-kho.jpg',it:[
@@ -1931,7 +1986,7 @@ const mods=document.getElementById('mods'),zz=document.getElementById('zz');
 function drawZ(){
   const m=DATA[set][cur];
   zz.style.animation='none';zz.offsetHeight;zz.style.animation='';
-  zz.innerHTML='<div><span class="otag">'+ico(m.i)+(set==='ql'?'I':'II')+'.'+(cur+1)+'</span><h3>'+m.t+'</h3><div class="items">'+m.it.map(x=>'<div class="it"><span class="ti">'+ico('check')+'</span><b>'+x+'</b></div>').join('')+'</div><a href="#register" class="btn btn-p">Đăng ký demo ngay →</a></div><div class="vis"><img src="'+m.img+'" alt="'+m.t+'" width="1200" height="896" loading="lazy"></div>';
+  zz.innerHTML='<div><span class="otag">'+ico(m.i)+(set==='ql'?'I':'II')+'.'+(cur+1)+'</span><h3>'+m.t+'</h3><div class="items">'+m.it.map(x=>'<div class="it"><span class="ti">'+ico('check')+'</span><b>'+x+'</b></div>').join('')+'</div><a href="#register" class="btn btn-p">Đăng ký nhận Demo ngay →</a></div><div class="vis"><img src="'+m.img+'" alt="'+m.t+'" width="1200" height="896" loading="lazy"></div>';
 }
 function drawM(){
   mods.innerHTML=DATA[set].map((m,i)=>'<button class="'+(i===cur?'on':'')+'" data-i="'+i+'">'+ico(m.i)+m.t+'</button>').join('');
@@ -2046,18 +2101,19 @@ initValuesScroll();
 
 
 // form: gửi sang Google Sheet qua Apps Script (xem google-apps-script.gs). Dán URL Web App vào SHEET_URL.
-const SHEET_URL='';
+const SHEET_URL='https://script.google.com/macros/s/AKfycbw1DxceJORyQEXRUeEmfLitqnfjZvl4hduDqFFYkCsZpCWK12kkXRBBpVWdrQiYJWq4kg/exec';
 document.querySelectorAll('form.lead-form, #form').forEach(fm=>fm.addEventListener('submit',e=>{
   e.preventDefault();
   const d=new FormData(e.target);
   const ck=n=>(document.cookie.match(new RegExp('(^| )'+n+'=([^;]+)'))||[])[2]||'';
   const q=Object.fromEntries(new URLSearchParams(location.search));
   const payload={name:d.get('name'),phone:d.get('phone'),email:d.get('email'),
-    company_size:d.get('company_size')||'',consult_time:d.get('consult_time')||'',message:d.get('message')||'',
-    industry:d.get('industry')||d.get('company_size')||'',needs:d.getAll('need'),
+    company_size:d.get('industry')||'',consult_time:d.getAll('need').join(', '),message:'Ngành: '+(d.get('industry')||'')+' | Nhu cầu: '+(d.getAll('need').join(', ')||'Chưa chọn cụ thể'),
+    industry:d.get('industry')||'',needs:d.getAll('need'),
     utm:{source:q.utm_source||'landing_page',medium:q.utm_medium||'form',campaign:q.utm_campaign||'inpro-launch',content:q.utm_content||'',term:q.utm_term||''},
     fbp:ck('_fbp'),fbclid:q.fbclid||ck('_fbc'),gclid:q.gclid||ck('gclid'),page:location.href,ts:new Date().toISOString()};
   payload.source_form=e.target.id;
+  payload.device=(innerWidth<=768?'mobile':innerWidth<=1080?'tablet':'desktop')+' '+innerWidth+'px';
   const fl=e.target.querySelector('.fields')||document.getElementById('fields');
   const ok=e.target.querySelector('.ok')||document.getElementById('ok');
   const btn=e.target.querySelector('button[type=submit]');
@@ -2068,6 +2124,19 @@ document.querySelectorAll('form.lead-form, #form').forEach(fm=>fm.addEventListen
     .then(done)
     .catch(()=>{if(btn){btn.disabled=false;btn.textContent='Đăng ký tư vấn →'}alert('Gửi chưa được, vui lòng gọi hotline 0869 634 683 hoặc nhắn Zalo.')});
 }));
+
+// Thanh CTA dính đáy (mobile): ẩn khi đang nhập form / khi đã tới khu vực đăng ký, tránh che trường nhập & nút gửi
+(function initMobileBar(){
+  const bar=document.getElementById('mobileBar'),reg=document.getElementById('register');
+  if(!bar) return;
+  let atForm=false,typing=false;
+  const upd=()=>bar.classList.toggle('is-hidden',atForm||typing);
+  if('IntersectionObserver' in window && reg){
+    new IntersectionObserver(en=>{atForm=en[0].isIntersecting;upd()},{threshold:.15}).observe(reg);
+  }
+  document.addEventListener('focusin',e=>{if(/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)){typing=true;upd()}});
+  document.addEventListener('focusout',()=>{typing=false;upd()});
+})();
 </script>
 </body>
 </html>
