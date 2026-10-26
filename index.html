@@ -71,12 +71,25 @@ h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;back
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px;max-width:1280px}
-.nav-logo{display:flex;align-items:center;transition:opacity .2s ease}
+.nav-logo{display:flex;align-items:center;flex:none;transition:opacity .2s ease}
 .nav-logo:hover{opacity:.88}
-.nav-logo img{height:32px;width:auto;display:block}
+.nav-logo img{height:32px;width:auto;max-width:none;flex:none;display:block}
 .menu{display:flex;gap:30px;font-size:14.5px;font-weight:600;color:var(--navy)}
 .menu a{white-space:nowrap;transition:.2s}
 .menu a:hover{color:var(--c1)}
+@media(min-width:1081px){
+  .menu{flex:1;justify-content:center}
+  .menu-links{display:flex;align-items:center;gap:36px}
+  .menu-links a{position:relative;padding:8px 2px;font-size:14.5px}
+  .menu-links a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .menu-links a:hover:after{transform:scaleX(1)}
+}
+@media(min-width:1081px) and (max-width:1260px){
+  nav .wrap{gap:14px}
+  .menu-links{gap:22px}
+  .menu-links a{font-size:14px}
+  nav .nav-r .btn{padding:10px 14px;font-size:13.5px}
+}
 .nav-r{display:flex;align-items:center;gap:10px}
 nav .btn{padding:10px 20px;font-size:14px}
 .burger{display:none;background:none;border:0;color:var(--navy);font-size:26px;cursor:pointer}
@@ -237,6 +250,9 @@ nav .btn{padding:10px 20px;font-size:14px}
 .why-subitem span{display:block;font-size:12.5px;color:var(--mut);line-height:1.45}
 .why-subgrid .why-subitem:last-child:nth-child(odd){grid-column:1/-1}
 .rf-title{font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px}
+/* Xuống dòng hợp lý: tránh từ lẻ loi ở cuối đoạn */
+.it b,.why-desc,.why-subitem span,.scard-desc,.reg-lead,.about p,.tool-info p,.sme-banner p,.lead,.gc p{text-wrap:pretty}
+.why-subitem b,.tool-info h4,.gc h4{text-wrap:balance}
 
 .why-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--c1);margin-top:22px;transition:.2s;width:fit-content}
 .why-link:hover{color:var(--c1-h);transform:translateX(4px)}
@@ -623,13 +639,130 @@ footer .ct a{margin:0}
 .fname{font-weight:700;color:var(--navy);font-size:15px;text-transform:uppercase;margin-bottom:10px}
 .copy{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}
 
-/* FLOATING DESKTOP */
-.hotpills{position:fixed;left:18px;bottom:18px;z-index:70;display:flex;gap:10px}
-.hotpills a{display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:7px 18px 7px 8px;box-shadow:var(--sh2);font-size:11px;font-weight:600;color:var(--mut);line-height:1.25;border:1px solid var(--line);transition:.2s}
-.hotpills a:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(24,35,61,.2)}
-.hotpills a b{display:block;font-size:16px;color:var(--navy)}
-.hotpills .hi{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:19px;background:var(--grad)}
-.hotpills .hz{background:#0084ff;font-size:12px;font-weight:800}
+/* FLOATING CONTACT COLUMN (Bottom-Right) */
+.float-contact{
+  position:fixed;
+  right:24px;
+  bottom:28px;
+  z-index:80;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:flex-end;
+  pointer-events:none;
+}
+.float-btn{
+  position:relative;
+  display:inline-flex;
+  flex-direction:row-reverse;
+  align-items:center;
+  height:52px;
+  max-width:52px;
+  padding:0;
+  border-radius:999px;
+  box-shadow:0 8px 24px rgba(24,35,61,.2);
+  text-decoration:none;
+  white-space:nowrap;
+  overflow:hidden;
+  pointer-events:auto;
+  transition:max-width .38s cubic-bezier(.16,1,.3,1),box-shadow .25s ease,transform .25s ease;
+  color:#fff;
+}
+.float-btn:hover{
+  box-shadow:0 12px 32px rgba(24,35,61,.28);
+  transform:translateY(-2px);
+}
+.float-hotline{
+  background:var(--grad);
+  animation:pulse-hotline 2.4s infinite;
+}
+.float-hotline:hover{
+  max-width:230px;
+  animation:none;
+}
+.float-zalo{
+  background:#0068ff;
+  animation:pulse-zalo 2.4s infinite 1.2s;
+}
+.float-zalo:hover{
+  max-width:205px;
+  animation:none;
+}
+.float-icon{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  flex:none;
+  display:grid;
+  place-items:center;
+  transition:transform .25s ease;
+}
+.float-btn:hover .float-icon{
+  transform:scale(1.06);
+}
+.float-hotline .ico{
+  width:22px;
+  height:22px;
+  fill:none;
+  stroke:#fff;
+  stroke-width:2.2;
+  animation:phone-ring 4s infinite ease-in-out;
+}
+.float-hotline:hover .ico{
+  animation:none;
+}
+.float-zalo svg{
+  width:26px;
+  height:26px;
+  fill:#fff;
+  display:block;
+}
+.float-info{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-left:18px;
+  padding-right:6px;
+  opacity:0;
+  transform:translateX(10px);
+  transition:opacity .25s ease,transform .25s ease;
+  pointer-events:none;
+}
+.float-btn:hover .float-info{
+  opacity:1;
+  transform:translateX(0);
+  pointer-events:auto;
+}
+.float-sub{
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.82);
+  line-height:1.2;
+}
+.float-main{
+  font-size:14.5px;
+  font-weight:800;
+  color:#fff;
+  line-height:1.25;
+}
+@keyframes pulse-hotline{
+  0%{box-shadow:0 0 0 0 rgba(147,51,234,.6),0 8px 24px rgba(24,35,61,.2)}
+  70%{box-shadow:0 0 0 13px rgba(147,51,234,0),0 8px 24px rgba(24,35,61,.2)}
+  100%{box-shadow:0 0 0 0 rgba(147,51,234,0),0 8px 24px rgba(24,35,61,.2)}
+}
+@keyframes pulse-zalo{
+  0%{box-shadow:0 0 0 0 rgba(0,104,255,.6),0 8px 24px rgba(24,35,61,.2)}
+  70%{box-shadow:0 0 0 13px rgba(0,104,255,0),0 8px 24px rgba(24,35,61,.2)}
+  100%{box-shadow:0 0 0 0 rgba(0,104,255,0),0 8px 24px rgba(24,35,61,.2)}
+}
+@keyframes phone-ring{
+  0%,100%{transform:rotate(0)}
+  10%,30%{transform:rotate(-14deg)}
+  20%,40%{transform:rotate(14deg)}
+  50%{transform:rotate(0)}
+}
 
 /* MOBILE STICKY ACTION BAR */
 .mobile-bar{display:none}
@@ -1058,7 +1191,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   img,video,iframe{max-width:100%}
 
   /* Thanh hành động dính đáy (thay cho 2 pill Hotline/Zalo che nội dung) */
-  .hotpills{display:none}
+  .float-contact,.hotpills{display:none}
   .mobile-bar{
     display:flex;position:fixed;left:0;right:0;bottom:0;z-index:45;gap:8px;align-items:stretch;
     padding:8px max(12px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));
@@ -1147,13 +1280,13 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
       <div class="menu-mobile-actions">
         <a href="#register" class="btn btn-p" onclick="closeMenu()">Nhận Demo ngay →</a>
-        <a href="tel:0869634683" class="btn btn-o"><svg class="ico"><use href="#i-phone"/></svg> Hotline 0869 634 683</a>
-        <a href="https://zalo.me/869634683" target="_blank" rel="noopener" class="btn btn-zalo">Chat Zalo tư vấn</a>
+        <a href="tel:0925376699" class="btn btn-o"><svg class="ico"><use href="#i-phone"/></svg> Hotline 0925 376 699</a>
+        <a href="https://zalo.me/925376699" target="_blank" rel="noopener" class="btn btn-zalo">Chat Zalo tư vấn</a>
       </div>
     </div>
     <div class="nav-r">
       <a href="#register" class="btn btn-p nav-cta-desktop">Nhận Demo ngay</a>
-      <a href="tel:0869634683" class="btn btn-o nav-hotline-desktop">Hotline 0869 634 683</a>
+
       <button class="burger" id="burgerBtn" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -1871,19 +2004,38 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   </div>
 </section>
 
-<!-- Floating Contact Pills (Desktop) -->
-<div class="hotpills">
-  <a href="tel:0869634683"><span class="hi"><svg class="ico"><use href="#i-phone"/></svg></span><span>HOTLINE<b>0869 634 683</b></span></a>
-  <a href="https://zalo.me/869634683" target="_blank" rel="noopener"><span class="hi hz">Zalo</span><span>CHAT ZALO<b>869 634 683</b></span></a>
+<!-- Floating Contact Column (Bottom-Right) -->
+<div class="float-contact" id="floatContact">
+  <a href="https://zalo.me/925376699" target="_blank" rel="noopener" class="float-btn float-zalo" aria-label="Chat qua Zalo" title="Chat qua Zalo">
+    <span class="float-icon">
+      <svg viewBox="0 0 24 24" class="float-svg-zalo" fill="currentColor">
+        <path d="M12.49 10.2722v-.4496h1.3467v6.3218h-.7704a.576.576 0 01-.5763-.5729l-.0006.0005a3.273 3.273 0 01-1.9372.6321c-1.8138 0-3.2844-1.4697-3.2844-3.2823 0-1.8125 1.4706-3.2822 3.2844-3.2822a3.273 3.273 0 011.9372.6321l.0006.0005zM6.9188 7.7896v.205c0 .3823-.051.6944-.2995 1.0605l-.03.0343c-.0542.0615-.1815.206-.2421.2843L2.024 14.8h4.8948v.7682a.5764.5764 0 01-.5767.5761H0v-.3622c0-.4436.1102-.6414.2495-.8476L4.8582 9.23H.1922V7.7896h6.7266zm8.5513 8.3548a.4805.4805 0 01-.4803-.4798v-7.875h1.4416v8.3548H15.47zM20.6934 9.6C22.52 9.6 24 11.0807 24 12.9044c0 1.8252-1.4801 3.306-3.3066 3.306-1.8264 0-3.3066-1.4808-3.3066-3.306 0-1.8237 1.4802-3.3044 3.3066-3.3044zm-10.1412 5.253c1.0675 0 1.9324-.8645 1.9324-1.9312 0-1.065-.865-1.9295-1.9324-1.9295s-1.9324.8644-1.9324 1.9295c0 1.0667.865 1.9312 1.9324 1.9312zm10.1412-.0033c1.0737 0 1.945-.8707 1.945-1.9453 0-1.073-.8713-1.9436-1.945-1.9436-1.0753 0-1.945.8706-1.945 1.9453 0 1.0746.8697 1.9453 1.945 1.9453z"/>
+      </svg>
+    </span>
+    <span class="float-info">
+      <span class="float-sub">Hỗ trợ trực tuyến</span>
+      <span class="float-main">Chat qua Zalo</span>
+    </span>
+  </a>
+
+  <a href="tel:0925376699" class="float-btn float-hotline" aria-label="Gọi Hotline 0925 376 699" title="Hotline: 0925 376 699">
+    <span class="float-icon">
+      <svg class="ico"><use href="#i-phone"/></svg>
+    </span>
+    <span class="float-info">
+      <span class="float-sub">Hotline tư vấn</span>
+      <span class="float-main">0925 376 699</span>
+    </span>
+  </a>
 </div>
 
 <!-- Mobile Sticky Bottom Action Bar -->
 <div class="mobile-bar" id="mobileBar">
-  <a href="tel:0869634683" class="mbar-btn mbar-call" aria-label="Gọi hotline">
+  <a href="tel:0925376699" class="mbar-btn mbar-call" aria-label="Gọi hotline">
     <svg class="ico"><use href="#i-phone"/></svg>
     <span>Gọi tư vấn</span>
   </a>
-  <a href="https://zalo.me/869634683" target="_blank" rel="noopener" class="mbar-btn mbar-zalo" aria-label="Chat Zalo">
+  <a href="https://zalo.me/925376699" target="_blank" rel="noopener" class="mbar-btn mbar-zalo" aria-label="Chat Zalo">
     <span>Zalo</span>
   </a>
   <a href="#register" class="mbar-btn mbar-cta">
@@ -1900,11 +2052,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
         <div class="fname">INPRO.vn · Hệ sinh thái Nonelab</div>
         <p>Hệ thống quản trị doanh nghiệp thông minh, kiến tạo năng lực sinh lời bền vững.<br><b>Tăng lời, vững lãi.</b> Earn More. Keep More. Increase Profit.</p>
         <div class="ct"><svg class="ico"><use href="#i-pin"/></svg><span>111 Cù Chính Lan, Phương Liệt, Hà Nội</span></div>
-        <div class="ct"><svg class="ico"><use href="#i-phone"/></svg><a href="tel:0869634683">0869 634 683 (Hotline)</a></div>
-        <div class="ct"><svg class="ico"><use href="#i-mail"/></svg><a href="mailto:trananhtuanttq75@gmail.com">trananhtuanttq75@gmail.com</a></div>
+        <div class="ct"><svg class="ico"><use href="#i-phone"/></svg><a href="tel:0925376699">0925 376 699 (Hotline)</a></div>
+        <div class="ct"><svg class="ico"><use href="#i-mail"/></svg><a href="mailto:info@inpro.vn">info@inpro.vn</a></div>
       </div>
       <div><h5>Sản phẩm</h5><a href="#features">Tính năng</a><a href="#values">Giá trị mang lại</a><a href="#pricing">Bảng giá</a><a href="#demo">Demo</a></div>
-      <div><h5>Về INPRO.vn</h5><a href="#why">Tại sao chọn INPRO.vn?</a><a href="#tools">Bộ công cụ</a><a href="#register">Đăng ký trải nghiệm</a><a href="https://zalo.me/869634683" target="_blank" rel="noopener">Chat Zalo</a></div>
+      <div><h5>Về INPRO.vn</h5><a href="#why">Tại sao chọn INPRO.vn?</a><a href="#tools">Bộ công cụ</a><a href="#register">Đăng ký trải nghiệm</a><a href="https://zalo.me/925376699" target="_blank" rel="noopener">Chat Zalo</a></div>
     </div>
     <div class="copy">© 2026 INPRO.vn · Hệ sinh thái Nonelab. All rights reserved.</div>
   </div>
@@ -1986,10 +2138,10 @@ const mods=document.getElementById('mods'),zz=document.getElementById('zz');
 function drawZ(){
   const m=DATA[set][cur];
   zz.style.animation='none';zz.offsetHeight;zz.style.animation='';
-  zz.innerHTML='<div><span class="otag">'+ico(m.i)+(set==='ql'?'I':'II')+'.'+(cur+1)+'</span><h3>'+m.t+'</h3><div class="items">'+m.it.map(x=>'<div class="it"><span class="ti">'+ico('check')+'</span><b>'+x+'</b></div>').join('')+'</div><a href="#register" class="btn btn-p">Đăng ký nhận Demo ngay →</a></div><div class="vis"><img src="'+m.img+'" alt="'+m.t+'" width="1200" height="896" loading="lazy"></div>';
+  zz.innerHTML='<div><span class="otag">'+ico(m.i)+(set==='ql'?'I':'II')+'.'+(cur+1)+'</span><h3>'+nb(m.t)+'</h3><div class="items">'+m.it.map(x=>'<div class="it"><span class="ti">'+ico('check')+'</span><b>'+nb(x)+'</b></div>').join('')+'</div><a href="#register" class="btn btn-p">Đăng ký nhận Demo ngay →</a></div><div class="vis"><img src="'+m.img+'" alt="'+m.t+'" width="1200" height="896" loading="lazy"></div>';
 }
 function drawM(){
-  mods.innerHTML=DATA[set].map((m,i)=>'<button class="'+(i===cur?'on':'')+'" data-i="'+i+'">'+ico(m.i)+m.t+'</button>').join('');
+  mods.innerHTML=DATA[set].map((m,i)=>'<button class="'+(i===cur?'on':'')+'" data-i="'+i+'">'+ico(m.i)+nb(m.t)+'</button>').join('');
   mods.querySelectorAll('button').forEach(b=>b.onclick=()=>{cur=+b.dataset.i;drawM();drawZ()});
 }
 document.querySelectorAll('#seg button').forEach(b=>b.onclick=()=>{
@@ -2122,7 +2274,7 @@ document.querySelectorAll('form.lead-form, #form').forEach(fm=>fm.addEventListen
   if(btn){btn.disabled=true;btn.textContent='Đang gửi...'}
   fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
     .then(done)
-    .catch(()=>{if(btn){btn.disabled=false;btn.textContent='Đăng ký tư vấn →'}alert('Gửi chưa được, vui lòng gọi hotline 0869 634 683 hoặc nhắn Zalo.')});
+    .catch(()=>{if(btn){btn.disabled=false;btn.textContent='Đăng ký tư vấn →'}alert('Gửi chưa được, vui lòng gọi hotline 0925 376 699 hoặc nhắn Zalo.')});
 }));
 
 // Thanh CTA dính đáy (mobile): ẩn khi đang nhập form / khi đã tới khu vực đăng ký, tránh che trường nhập & nút gửi
@@ -2136,6 +2288,27 @@ document.querySelectorAll('form.lead-form, #form').forEach(fm=>fm.addEventListen
   }
   document.addEventListener('focusin',e=>{if(/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)){typing=true;upd()}});
   document.addEventListener('focusout',()=>{typing=false;upd()});
+})();
+// Xuống dòng hợp lý (tiếng Việt): không để trình duyệt ngắt giữa các âm tiết của cùng một từ ghép (vd. "kết quả", "cụ thể", "dòng tiền")
+var VN_WORDS=('giới thiệu|thiết kế|cam kết|cải thiện|đội ngũ|phù hợp|hỗ trợ|miễn phí|thành công|tiếp cận|tương lai|chuyên gia|chuyên sâu|chuyên biệt|thiết bị|nhanh chóng|rõ ràng|chính xác|lựa chọn|ứng dụng|sử dụng|triển khai|chủ động|hoạt động|phương pháp|sáng lập|lĩnh vực|chủ tịch|kết quả|cụ thể|dòng tiền|toàn diện|doanh nghiệp|doanh thu|doanh số|lợi nhuận|quản lý|quản trị|vận hành|hiệu quả|hiệu suất|thương hiệu|nhân sự|kinh nghiệm|kinh doanh|dữ liệu|thông tin|thông minh|tri thức|hệ thống|hệ sinh thái|sản phẩm|chiến dịch|quảng cáo|nền tảng|tự động|tối ưu|đơn hàng|khách hàng|bán hàng|thị trường|đầu tư|xây dựng|phát triển|phát hiện|biến động|giải pháp|đề xuất|tỷ lệ|chuyển đổi|phân loại|phân bổ|theo dõi|kiểm soát|tính toán|nguồn tiền|nguồn lực|mục tiêu|báo cáo|định kỳ|hạng mục|chi tiết|đối chiếu|đối tác|giai đoạn|nhân viên|thiết lập|tổng hợp|tiến độ|nhà phân phối|đại lý|bán sỉ|quy trình|xử lý|giao nhận|mở rộng|mạng lưới|phân tích|thông qua|chỉ số|xác định|giá trị|thực tế|mang lại|nâng cao|năng lực|điều hành|quyết định|kịp thời|cơ sở|nhìn nhận|phân mảnh|phán đoán|nguyên nhân|kỳ vọng|chuẩn hóa|chuẩn hoá|lưu giữ|nội bộ|phụ thuộc|cá nhân|kế thừa|bền vững|đào tạo|chuyển giao|thực chiến|khó khăn|vấn đề|tăng trưởng|gia tăng|tiết kiệm|chi phí|năng suất|cải tiến|liên tục|hằng ngày|mỗi ngày|tích lũy|học hỏi|tập trung|đồng bộ|nhất quán|hoạch định|chiến lược|tổ chức|linh hoạt|hoàn thiện|đồng hành|thao tác|thủ công|thời gian|hợp lý|đa nhiệm|tài chính|kế toán|đối soát|giao dịch|trực quan|đánh giá|cài đặt|phân quyền|người dùng|tùy chỉnh|truyền thông|hợp tác|lịch sử|tương tác|chăm sóc|tồn kho|xuất nhập|luân chuyển|hàng hóa|phần mềm|trải nghiệm|đăng ký|tư vấn|ngành hàng|nhu cầu|quan tâm|tích hợp|bảo mật|lãnh đạo|việt nam|đông nam á|nhà quản lý|nhà bán hàng|thực hiện|hạn chế|thất thoát|nhận diện|tình hình|bứt phá|tìm hiểu|wave picking|pick list|full suite|ra quyết định').split('|').sort((a,b)=>b.length-a.length);
+var VN_L='A-Za-z0-9À-ỹ';
+var VN_RE=new RegExp('(^|[^'+VN_L+'])('+VN_WORDS.join('|')+')(?!['+VN_L+'])','gi');
+function vnBind(s){if(!VN_RE)return s;return s.replace(VN_RE,(m,p,w)=>p+w.replace(/ /g,'\u00a0')).replace(new RegExp('([0-9]) (?=['+VN_L+'])','g'),'$1\u00a0')}
+function lastTwo(s){return s.replace(/ ([^ \u00a0]+) ([^ \u00a0]+)( *)$/,' $1\u00a0$2$3')}
+function nb(s){return vnBind(lastTwo(s))}
+(function(){
+  const skip=/^(SCRIPT|STYLE|OPTION|TEXTAREA|SELECT|NOSCRIPT)$/;
+  const lastSel='.it b,.why-desc,.why-subitem b,.why-subitem span,.scard-desc,.scard-chip,.lead,.reg-lead,.gc p,.tool-info p,.sme-banner p,.pr .d,.about p';
+  const lastNodes=new Set();
+  document.querySelectorAll(lastSel).forEach(el=>{
+    const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let last=null,n;
+    while((n=w.nextNode())) if(n.nodeValue.trim()) last=n;
+    if(last) lastNodes.add(last);
+  });
+  const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>skip.test(n.parentNode.nodeName)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+  const nodes=[];let n;
+  while((n=tw.nextNode())) nodes.push(n);
+  nodes.forEach(n=>{let v=n.nodeValue;if(lastNodes.has(n)) v=lastTwo(v);n.nodeValue=vnBind(v)});
 })();
 </script>
 </body>
