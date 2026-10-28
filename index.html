@@ -1224,6 +1224,22 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .mbar-btn{padding:0 12px}
   .mbar-call{min-width:48px}
 }
+/* HERO TITLE: đúng 3 dòng */
+.hero h1 span{white-space:nowrap}
+.hero h1{font-size:clamp(26px,3.1vw,46px);line-height:1.25;font-weight:800}
+@media(max-width:768px){.hero h1{font-size:clamp(17px,5.6vw,30px) !important;line-height:1.3}}
+
+/* POPUP FORM ĐĂNG KÝ */
+.modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(24,35,61,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .28s ease,visibility 0s linear .28s;overflow-y:auto}
+.modal.open{opacity:1;visibility:visible;transition:opacity .28s ease,visibility 0s}
+.modal-box{position:relative;width:100%;max-width:480px;margin:auto;transform:translateY(24px) scale(.97);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.modal.open .modal-box{transform:none}
+.modal-close{position:absolute;top:-14px;right:-14px;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:var(--navy);font-size:18px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.25);transition:.2s}
+.modal-close:hover{background:var(--tint);color:var(--c1);transform:rotate(90deg)}
+.modal form.reg-card{max-height:calc(100dvh - 40px);overflow-y:auto}
+.reg-open-wrap{margin:0 0 30px}
+.rgrid{grid-template-columns:1fr}
+@media(max-width:768px){.modal{padding:14px;align-items:flex-start}.modal-close{top:8px;right:8px;box-shadow:0 4px 12px rgba(0,0,0,.15)}}
 </style>
 </head>
 <body>
@@ -1299,7 +1315,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 <header class="hero" id="top">
   <div class="wrap">
     <a href="#top" class="hero-logo" aria-label="INPRO.vn"><img src="assets/inpro-ngang-titled.png" alt="INPRO.vn - Earn More, Keep More, Increase Profit" width="220" height="50"></a>
-    <h1><span>PHẦN MỀM AI HỖ&nbsp;TRỢ<br class="br-m"> NHÀ&nbsp;BÁN&nbsp;HÀNG</span> <span>TĂNG&nbsp;TRƯỞNG LỢI&nbsp;NHUẬN</span></h1>
+    <h1><span>PHẦN MỀM AI HỖ TRỢ</span><span>NHÀ BÁN HÀNG</span><span>TĂNG TRƯỞNG LỢI NHUẬN</span></h1>
     <div class="hcols">
     <div>
       <div class="slogan">Tăng lời, vững lãi</div>
@@ -1905,6 +1921,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
       <h2>Tối ưu vận&nbsp;hành doanh&nbsp;nghiệp<br class="br-m"> của bạn ngay&nbsp;hôm&nbsp;nay!</h2>
       <p class="reg-lead">Để INPRO.vn đồng hành cùng doanh nghiệp của bạn trong quá trình tìm hiểu nhu cầu, giới thiệu giải pháp phù hợp và thiết kế hệ thống tối ưu riêng. Với kinh nghiệm đội ngũ và hệ sinh thái bán lẻ 600–700 tỷ/năm, INPRO.vn cam kết hỗ trợ bạn cải thiện hiệu quả vận hành, tối ưu quy trình kinh doanh và bứt phá tăng trưởng bền vững.</p>
       
+      <div class="reg-open-wrap"><a href="#register" class="btn btn-w" id="regOpenBtn">Đăng ký nhận Demo ngay →</a></div>
       <div class="glass">
         <!-- 1. Tư vấn chuyên sâu -->
         <div class="gc">
@@ -1947,7 +1964,9 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
     </div>
 
     <!-- FORM -->
-    <form id="form" class="reg-card rv lead-form">
+    <div class="modal" id="regModal" role="dialog" aria-modal="true" aria-label="Đăng ký trải nghiệm"><div class="modal-box">
+    <button type="button" class="modal-close" id="regClose" aria-label="Đóng">✕</button>
+    <form id="form" class="reg-card lead-form">
       <div id="fields">
         <div class="reg-card-head">
           <h3 class="reg-card-title">ĐĂNG KÝ TRẢI NGHIỆM NGAY</h3>
@@ -2001,6 +2020,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
         <p style="color:var(--mut)">INPRO.vn sẽ liên hệ trong thời gian sớm nhất.</p>
       </div>
     </form>
+    </div></div>
   </div>
 </section>
 
@@ -2063,6 +2083,21 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 </footer>
 
 <script>
+// Popup form đăng ký: mọi CTA trỏ về #register sẽ mở popup
+(function(){
+  const modal=document.getElementById('regModal');
+  if(!modal) return;
+  const open=()=>{modal.classList.add('open');document.body.style.overflow='hidden';const i=modal.querySelector('input[name=name]');if(i)setTimeout(()=>i.focus({preventScroll:true}),320)};
+  const close=()=>{modal.classList.remove('open');document.body.style.overflow=''};
+  document.addEventListener('click',e=>{
+    const a=e.target.closest('a[href="#register"]');
+    if(a){e.preventDefault();open()}
+  });
+  document.getElementById('regClose').addEventListener('click',close);
+  modal.addEventListener('mousedown',e=>{if(e.target===modal)close()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+})();
+
 // reveal
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
