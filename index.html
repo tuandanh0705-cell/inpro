@@ -4550,7 +4550,6 @@ body{
       <div class="vbar">
         <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
         <span>INPRO.vn OS · Video giới thiệu &amp; trải nghiệm thực tế</span>
-        <a href="VIdeo%20gi%E1%BB%9Bi%20thi%E1%BB%87u.mp4" target="_blank" rel="noopener">Mở toàn màn hình ↗</a>
       </div>
       <div class="vbody" id="vbody" role="button" tabindex="0" aria-label="Phát video giới thiệu INPRO.vn OS" onclick="playVideo()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();playVideo();}">
         <div class="vcover" id="vcover">
@@ -4560,12 +4559,7 @@ body{
           </div>
           <span class="vcaption">Bấm để phát video demo</span>
         </div>
-        <div class="vplayer" id="vplayer">
-          <video id="demoVideo" poster="assets/real/man-hinh-realtime.jpg" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:contain;background:#0f172a;display:block">
-            <source src="VIdeo%20gi%E1%BB%9Bi%20thi%E1%BB%87u.mp4" type="video/mp4">
-            <source src="VIdeo giới thiệu.mp4" type="video/mp4">
-          </video>
-        </div>
+        <div class="vplayer" id="vplayer"></div>
       </div>
     </div>
     <a href="#register" class="btn btn-w">Đăng ký nhận Demo ngay →</a>
@@ -5625,15 +5619,22 @@ document.addEventListener('keydown', e => {
   if(e.key === 'Escape' && menuEl && menuEl.classList.contains('open')) closeMenu();
 });
 
-// Video Demo Player (Local MP4: VIdeo giới thiệu.mp4)
+// Video Demo Player (Inline YouTube Embed on HTTPS/GitHub Pages + Local MP4 support on file://)
 function playVideo(){
   const cover = document.getElementById('vcover');
-  const vid = document.getElementById('demoVideo');
-  if(cover && !cover.classList.contains('hide')){
-    cover.classList.add('hide');
-    if(vid){
-      vid.play().catch(() => {});
+  const player = document.getElementById('vplayer');
+  if(!cover || !player || cover.classList.contains('hide')) return;
+  cover.classList.add('hide');
+  const ytIframe = '<iframe src="https://www.youtube.com/embed/96CC2jYyl98?autoplay=1&playsinline=1&rel=0&modestbranding=1" title="INPRO.vn OS - Video giới thiệu" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:0;background:#0f172a;display:block"></iframe>';
+  if(window.location.protocol === 'file:'){
+    player.innerHTML = '<video src="VIdeo%20gi%E1%BB%9Bi%20thi%E1%BB%87u.mp4" controls autoplay playsinline style="width:100%;height:100%;object-fit:contain;background:#0f172a;display:block"></video>';
+    const v = player.querySelector('video');
+    if(v){
+      v.onerror = () => { player.innerHTML = ytIframe; };
+      v.play().catch(() => {});
     }
+  } else {
+    player.innerHTML = ytIframe;
   }
 }
 
