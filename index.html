@@ -8,13 +8,13 @@
 <meta name="referrer" content="origin">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/inpro-vuong.png">
 <style>
 /* INPRO BRAND GUIDELINES 2026 (Synchronized with DESIGN.md & PRODUCT.md) */
 :root{
-  --font-brand:'Audiowide','Mulish',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --font-brand:'Mulish',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   --font-body:'Mulish',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 
   /* Brand Palette */
@@ -77,13 +77,13 @@ h1,h2,h3{text-wrap:balance}
   color:var(--c1-h);
   font-family:var(--font-brand);
   font-size:12px;
-  font-weight:700;
+  font-weight:800;
   letter-spacing:.08em;
   text-transform:uppercase;
   margin-bottom:14px;
 }
-h2{font-size:clamp(24px,3.3vw,42px);line-height:1.22;font-weight:800;color:var(--navy);letter-spacing:-.01em}
-h2 strong.hl{font-weight:800;color:var(--c1)}
+h2{font-size:clamp(24px,3.3vw,42px);line-height:1.22;font-weight:900;color:var(--navy);letter-spacing:-.01em;-webkit-text-stroke:.25px currentColor}
+h2 strong.hl{font-weight:900;color:var(--c1);-webkit-text-stroke:.25px currentColor}
 .lead{color:var(--mut);font-size:16px;line-height:1.65;margin-top:14px;max-width:70ch;margin-left:auto;margin-right:auto}
 .head{max-width:820px;margin:0 auto 48px;text-align:center}
 
@@ -124,21 +124,22 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .nav-logo{display:flex;align-items:center;flex:none;transition:opacity .2s ease}
 .nav-logo:hover{opacity:.88}
 .nav-logo img{height:32px;width:auto;max-width:none;flex:none;display:block}
-.menu{display:flex;gap:28px;font-size:14px;font-weight:600;color:var(--navy)}
+.menu{display:flex;gap:24px;font-size:14.5px;font-weight:700;color:var(--navy)}
 .menu-links a{white-space:nowrap;transition:color .2s ease;color:var(--navy)}
-.menu-links a:hover{color:var(--c1)}
+.menu-links a:hover,.menu-links a.active{color:var(--c1-h)}
+.menu-links a.active{font-weight:800}
 @media(min-width:1081px){
   .menu{flex:1;justify-content:center}
-  .menu-links{display:flex;align-items:center;gap:32px}
-  .menu-links a{position:relative;padding:8px 2px;font-size:14px}
-  .menu-links a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:6px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
-  .menu-links a:hover:after{transform:scaleX(1)}
+  .menu-links{display:flex;align-items:center;gap:24px}
+  .menu-links a{position:relative;padding:8px 2px;font-size:14.5px;font-weight:700}
+  .menu-links a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2.5px;border-radius:6px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+  .menu-links a:hover:after,.menu-links a.active:after{transform:scaleX(1)}
 }
-@media(min-width:1081px) and (max-width:1260px){
-  nav .wrap{gap:14px}
-  .menu-links{gap:20px}
-  .menu-links a{font-size:14px}
-  nav .nav-r .btn{padding:10px 16px;font-size:14px}
+@media(min-width:1081px) and (max-width:1280px){
+  nav .wrap{gap:12px}
+  .menu-links{gap:16px}
+  .menu-links a{font-size:13.5px}
+  nav .nav-r .btn{padding:10px 16px;font-size:13.5px}
 }
 .nav-r{display:flex;align-items:center;gap:10px}
 nav .btn{padding:10px 20px;font-size:14px}
@@ -688,7 +689,7 @@ nav .btn{padding:10px 20px;font-size:14px}
 }
 .tool-icon-box img{width:100%;height:100%;object-fit:contain}
 .tool-info{flex:1;min-width:0}
-.tool-info h3{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:4px;line-height:1.3}
+.tool-info h3{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:4px;line-height:1.3;-webkit-text-stroke:.2px currentColor}
 .tool-info p{font-size:14px;color:var(--mut);line-height:1.5;margin:0}
 
 /* SME HERO BANNER */
@@ -706,7 +707,7 @@ nav .btn{padding:10px 20px;font-size:14px}
   box-shadow:var(--sh2);
 }
 .sme-banner-content{position:relative;z-index:2}
-.sme-banner h3{font-size:clamp(24px,2.8vw,32px);font-weight:800;color:var(--white);line-height:1.22;margin-bottom:14px}
+.sme-banner h3{font-size:clamp(24px,2.8vw,32px);font-weight:900;color:var(--white);line-height:1.22;margin-bottom:14px}
 .sme-banner p{font-size:16px;line-height:1.65;color:rgba(255,255,255,.94);margin-bottom:28px;max-width:520px}
 .btn-sme-demo{
   display:inline-flex;
@@ -731,15 +732,21 @@ nav .btn{padding:10px 20px;font-size:14px}
    SECTION 5: CÁC GÓI DỊCH VỤ (BẢNG GIÁ CHUẨN PRODUCT.md)
    ============================================================ */
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+@media(min-width:1081px){
+  .pg > .pr:nth-child(1){order:2}
+  .pg > .pr:nth-child(2){order:1}
+  .pg > .pr:nth-child(3){order:3}
+}
 .pr{background:var(--white);border:1.5px solid var(--line);border-radius:24px;padding:34px 28px;display:flex;flex-direction:column;position:relative;box-shadow:var(--sh)}
 .pr.hot{border:2px solid var(--c1);box-shadow:var(--sh2);transform:translateY(-10px)}
-.pr .rb{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--grad);color:var(--white);font-size:12px;font-weight:700;padding:5px 16px;border-radius:999px;white-space:nowrap;letter-spacing:.04em}
-.pr h3{font-size:20px;color:var(--navy);font-weight:800}
-.pr .d{color:var(--mut);font-size:14px;margin:8px 0 18px;min-height:46px}
-.price{font-size:42px;font-family:var(--font-body);font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.1}
-.pmeta{font-size:14px;color:var(--mut);margin-top:6px;font-weight:600}
+.pr .rb{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--grad);color:var(--white);font-size:12px;font-weight:800;padding:5px 16px;border-radius:999px;white-space:nowrap;letter-spacing:.04em}
+.pr h3{font-size:22px;color:#581c87;font-weight:900;-webkit-text-stroke:.25px currentColor;text-align:center;background-color:#f3e8ff;background-image:linear-gradient(135deg,#faf5ff 0%,#f3e8ff 100%);border-radius:999px;padding:11px 18px;margin-bottom:8px}
+.pr.hot h3{color:var(--white);background-color:#6b21a8;background-image:linear-gradient(135deg,#18233d 0%,#6b21a8 52%,#9333ea 100%)}
+.pr .d{color:var(--mut);font-size:14px;font-weight:600;text-align:center;margin:4px 0 16px;min-height:24px}
+.price{font-size:42px;font-family:var(--font-body);font-weight:900;color:var(--navy);letter-spacing:-.02em;line-height:1.1;text-align:center}
+.pmeta{font-size:14px;color:var(--mut);margin-top:6px;font-weight:600;text-align:center}
 .price small{font-size:14px;font-family:var(--font-body);color:var(--mut);font-weight:600}
-.gift{margin:16px 0 20px;font-size:14px;font-weight:700;color:var(--c1-h);background:var(--tint);padding:10px 14px;border-radius:12px;display:flex;gap:8px;align-items:center;border:1px solid var(--tint-border)}
+.gift{margin:16px 0 20px;font-size:14px;font-weight:700;color:var(--c1-h);background:var(--tint);padding:10px 14px;border-radius:12px;display:flex;gap:8px;align-items:center;justify-content:center;border:1px solid var(--tint-border)}
 .pr ul{list-style:none;margin-bottom:26px;flex:1}
 .pr li{padding:8px 0 8px 26px;position:relative;font-size:14px;color:var(--ink);line-height:1.5}
 .pr li:before{content:"";position:absolute;left:0;top:12px;width:16px;height:16px;border-radius:50%;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 12.5l4 4 8-9'/></svg>") center/10px no-repeat,var(--grad)}
@@ -1129,7 +1136,7 @@ footer .ct a:hover{color:var(--c1-h)}
   .tools-grid{grid-template-columns:repeat(2,1fr);column-gap:24px;row-gap:20px}
   .sme-banner{grid-template-columns:1fr;gap:32px;padding:40px 32px}
   .pg{grid-template-columns:1fr;max-width:540px;margin:0 auto}
-  .pr.hot{transform:none}
+  .pr.hot{transform:none;order:-1;margin-top:8px}
   .glass{grid-template-columns:1fr}
   .fg{grid-template-columns:1fr 1fr}
 }
@@ -1605,7 +1612,8 @@ footer .ct a:hover{color:var(--c1-h)}
 }
 .b-feat-col h3{
   font-size:20px;
-  font-weight:800;
+  font-weight:900;
+  -webkit-text-stroke:.25px currentColor;
   color:var(--navy);
   line-height:1.34;
   margin-bottom:12px;
@@ -1931,8 +1939,9 @@ footer .ct a:hover{color:var(--c1-h)}
   align-items:center;
   font-family:var(--font-brand);
   font-size:clamp(16px,1.75vw,20px);
-  font-weight:800;
-  letter-spacing:.04em;
+  font-weight:900;
+  -webkit-text-stroke:.2px currentColor;
+  letter-spacing:.03em;
   line-height:1.3;
   color:var(--white);
   background-color:#6b21a8;
@@ -2182,7 +2191,8 @@ body{
 }
 .b-halo-text h3{
   font-size:18.5px;
-  font-weight:800;
+  font-weight:900;
+  -webkit-text-stroke:.2px currentColor;
   color:var(--navy);
   margin:0;
 }
@@ -2667,7 +2677,8 @@ body{
 }
 .fn-ai-head h3{
   font-size:clamp(20px,2.2vw,25px);
-  font-weight:800;
+  font-weight:900;
+  -webkit-text-stroke:.25px currentColor;
   color:var(--navy);
   line-height:1.3;
 }
@@ -2683,6 +2694,102 @@ body{
 .fn-ai-card strong{
   color:var(--navy);
   font-weight:800;
+}
+
+/* 3B-2: 4-COLUMN LEADERSHIP SHOWCASE */
+.leaders-showcase{
+  margin-top:68px;
+  padding-top:8px;
+}
+.leaders-head{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 36px;
+}
+.leaders-head h3{
+  font-size:clamp(24px,2.8vw,34px);
+  font-weight:900;
+  -webkit-text-stroke:.25px currentColor;
+  color:var(--navy);
+  line-height:1.26;
+  margin-top:4px;
+}
+.leaders-head h3 strong.hl{
+  font-weight:900;
+  color:var(--c1);
+  -webkit-text-stroke:.25px currentColor;
+}
+.leaders-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+.leader-card{
+  background:var(--white);
+  border:1.5px solid var(--tint-border);
+  border-radius:24px;
+  padding:16px 16px 22px;
+  box-shadow:0 16px 38px rgba(0,0,0,.06);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.leader-card:hover{
+  transform:translateY(-6px);
+  border-color:#c084fc;
+  box-shadow:0 22px 48px rgba(0,0,0,.12);
+}
+.leader-photo{
+  width:100%;
+  aspect-ratio:4/5;
+  border-radius:18px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#faf5ff 0%,#f3e8ff 100%);
+  border:1px solid var(--tint-border);
+  margin-bottom:16px;
+}
+.leader-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top center;
+  display:block;
+}
+.leader-info{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+}
+.leader-role{
+  display:inline-block;
+  font-family:var(--font-brand);
+  font-size:11.5px;
+  font-weight:800;
+  letter-spacing:.05em;
+  padding:4px 12px;
+  border-radius:999px;
+  background-color:#6b21a8;
+  background-image:var(--grad);
+  color:var(--white);
+  margin-bottom:2px;
+}
+.leader-info h4{
+  font-size:20px;
+  font-weight:900;
+  -webkit-text-stroke:.2px currentColor;
+  color:var(--navy);
+  line-height:1.25;
+  margin:0;
+}
+.leader-info p{
+  font-size:13.5px;
+  font-weight:600;
+  color:var(--mut);
+  line-height:1.4;
+  margin:0;
 }
 
 /* 3C: BINGLE-STYLE PEEK CAROUSEL STAGE + INTERACTIVE SLIDEBAR TRACK */
@@ -2703,10 +2810,16 @@ body{
 }
 .ba-top-head h3{
   font-size:clamp(24px,2.8vw,34px);
-  font-weight:800;
+  font-weight:900;
+  -webkit-text-stroke:.25px currentColor;
   color:var(--navy);
   line-height:1.28;
   margin-top:6px;
+}
+.ba-top-head h3 strong.hl{
+  font-weight:900;
+  color:var(--c1);
+  -webkit-text-stroke:.25px currentColor;
 }
 .ba-nav-cluster{
   display:flex;
@@ -2928,18 +3041,18 @@ body{
   width:100%;
 }
 .ba-vcol.is-before{
-  background-color:#fff1f2;
-  background-image:linear-gradient(180deg,#ffffff 0%,#fff1f2 100%);
-  border:1.5px dashed #fda4af;
+  background-color:#fef2f2;
+  background-image:linear-gradient(180deg,#fff1f2 0%,#fee2e2 100%);
+  border:1.5px dashed #f87171;
   padding:14px 16px 20px;
   box-shadow:0 8px 22px rgba(0,0,0,.04);
 }
 .ba-vcol.is-after{
   position:relative;
   z-index:2;
-  background-color:#6b21a8;
-  background-image:linear-gradient(135deg,#18233d 0%,#6b21a8 52%,#9333ea 100%);
-  border:1.5px solid #c084fc;
+  background-color:#065f46;
+  background-image:linear-gradient(135deg,#064e3b 0%,#047857 52%,#059669 100%);
+  border:1.5px solid #34d399;
   border-radius:24px;
   padding:20px 18px 16px;
   color:var(--white);
@@ -2957,11 +3070,16 @@ body{
   font-weight:800;
 }
 .ba-vsub.is-before{
-  color:#9f1239;
+  color:#991b1b;
+  background-color:#fee2e2;
+  border:1px solid #fca5a5;
+  padding:3px 10px;
+  border-radius:999px;
 }
 .ba-vsub.is-after{
-  background-color:#581c87;
-  color:#f3e8ff;
+  background-color:#064e3b;
+  color:#ecfdf5;
+  border:1px solid rgba(110,231,183,.38);
   padding:3px 10px;
   border-radius:999px;
 }
@@ -2976,15 +3094,15 @@ body{
   padding:4px 14px 4px 5px;
   border-radius:999px;
   background:var(--white);
-  border:1.5px solid #d8b4fe;
+  border:1.5px solid #34d399;
   box-shadow:0 10px 24px rgba(0,0,0,.14);
 }
 .ba-bridge-ico{
   width:24px;
   height:24px;
   border-radius:50%;
-  background-color:#6b21a8;
-  background-image:var(--grad);
+  background-color:#047857;
+  background-image:linear-gradient(135deg,#059669,#047857);
   color:var(--white);
   display:grid;
   place-items:center;
@@ -2994,7 +3112,7 @@ body{
 .ba-bridge-txt{
   font-size:11.5px;
   font-weight:800;
-  color:var(--c1-h);
+  color:#065f46;
   letter-spacing:.04em;
 }
 .ba-state-pill{
@@ -3010,20 +3128,20 @@ body{
   text-transform:uppercase;
 }
 .ba-state-pill.is-before{
-  background:#ffe4e6;
-  color:#9f1239;
-  border:1px solid #fecdd3;
+  background-color:#dc2626;
+  color:var(--white);
+  border:1px solid #fca5a5;
 }
 .ba-state-pill .ba-dot{
   width:7px;
   height:7px;
   border-radius:50%;
-  background:#e11d48;
+  background:#ffffff;
 }
 .ba-state-pill.is-after{
-  background-color:#4c1d95;
+  background-color:#047857;
   color:var(--white);
-  border:1px solid #c084fc;
+  border:1px solid #6ee7b7;
 }
 .ba-state-pill.is-after .ico{
   width:14px;
@@ -3042,12 +3160,12 @@ body{
 }
 .ba-vlist.is-before li{
   background:var(--white);
-  border:1px solid #fecdd3;
+  border:1.5px solid #fca5a5;
   border-radius:12px;
   padding:7px 10px;
   font-size:13px;
   font-weight:700;
-  color:#334155;
+  color:#7f1d1d;
   display:flex;
   align-items:center;
   gap:7px;
@@ -3059,8 +3177,8 @@ body{
   gap:8px;
 }
 .ba-vlist.is-after li{
-  background-color:#581c87;
-  border:1px solid rgba(216,180,254,.32);
+  background-color:#064e3b;
+  border:1px solid rgba(110,231,183,.38);
   color:var(--white);
   padding:8px 12px;
   border-radius:14px;
@@ -3079,8 +3197,8 @@ body{
   min-width:0;
 }
 .ba-vbadge{
-  background-color:#3b0764;
-  border:1px solid #c084fc;
+  background-color:#022c22;
+  border:1px solid #34d399;
   color:var(--white);
   font-size:11.5px;
   font-weight:800;
@@ -3100,11 +3218,11 @@ body{
   font-weight:900;
 }
 .ba-vico.is-bad{
-  background:#ffe4e6;
-  color:#e11d48;
+  background-color:#dc2626;
+  color:var(--white);
 }
 .ba-vico.is-ok{
-  background-color:#7e22ce;
+  background-color:#047857;
   color:var(--white);
 }
 .ba-vico .ico{
@@ -3115,8 +3233,8 @@ body{
   display:flex;
   align-items:center;
   gap:10px;
-  background-color:#3b0764;
-  border:1px solid #a855f7;
+  background-color:#064e3b;
+  border:1px solid #34d399;
   color:var(--white);
   padding:10px 16px;
   border-radius:14px;
@@ -3127,7 +3245,7 @@ body{
 .ba-impact-bar .ico{
   width:16px;
   height:16px;
-  color:#e9d5ff;
+  color:#6ee7b7;
   flex:none;
 }
 
@@ -3385,6 +3503,8 @@ body{
   .x100-stage-wrap{min-height:auto;padding:4px 0 8px}
   .x100-stage-wave{inset:4px -8px 4px 8px}
   .founder-portrait-card{max-width:360px;margin:0 auto}
+  .leaders-grid{grid-template-columns:repeat(2,1fr);gap:18px}
+  .pr.hot{transform:none;order:-1;margin-top:8px}
   .ba-dock{grid-template-columns:repeat(2,1fr);gap:10px}
   .ba-slide{flex:0 0 100%;padding:28px 24px}
   .ba-slide-grid{grid-template-columns:1fr}
@@ -3440,6 +3560,14 @@ body{
   .x100-sdot{padding:6px 8px;font-size:11.5px;text-align:center}
   .founder-portrait-stage{padding:12px 4px 4px}
   .founder-portrait-card{max-width:300px;border-radius:28px}
+  .leaders-showcase{margin-top:44px}
+  .leaders-head{margin-bottom:22px}
+  .leaders-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .leader-card{padding:10px 10px 16px;border-radius:18px}
+  .leader-photo{border-radius:14px;margin-bottom:10px}
+  .leader-role{font-size:11.5px;padding:3px 9px}
+  .leader-info h4{font-size:16px}
+  .leader-info p{font-size:12px}
   .founder-mission-chip{position:absolute;top:12px;right:6px;padding:7px 12px;border-radius:14px}
   .founder-badge-overlay{left:12px;right:12px;bottom:12px;padding:12px 14px;border-radius:16px}
   .fn-story-card,.fn-ai-card{padding:20px 16px;border-radius:22px}
@@ -3585,9 +3713,10 @@ body{
         <button class="menu-close" id="menuCloseBtn" type="button" onclick="closeMenu()" aria-label="Đóng menu">✕</button>
       </div>
       <div class="menu-links">
-        <a href="#solutions" onclick="closeMenu()">Giải pháp &amp; Tính năng</a>
-        <a href="#x100-ops" onclick="closeMenu()">Quản lý x Vận kho</a>
-        <a href="#why" onclick="closeMenu()">Vì sao chọn INPRO.vn?</a>
+        <a href="#inpro-pillars" onclick="closeMenu()">Giải pháp</a>
+        <a href="#x100-ops" onclick="closeMenu()">Quản lý × Vận kho</a>
+        <a href="#why" onclick="closeMenu()">Đội ngũ &amp; Câu chuyện</a>
+        <a href="#brandCases" onclick="closeMenu()">Case Study</a>
         <a href="#tools" onclick="closeMenu()">Bộ công cụ</a>
         <a href="#pricing" onclick="closeMenu()">Bảng giá</a>
       </div>
@@ -4018,7 +4147,7 @@ body{
     <!-- 2A. 3 Điểm nghẽn dòng tiền (Kiểu "Our Features" của Bingle) -->
     <div class="b-head rv">
       <span class="section-tag">Bài toán dòng tiền</span>
-      <h2>Bạn đã thực sự làm chủ được <strong class="hl">dòng&nbsp;tiền</strong> của doanh&nbsp;nghiệp mình khi mà:</h2>
+      <h2>Liệu bạn đã thực sự làm chủ được <strong class="hl">dòng&nbsp;tiền</strong> của doanh&nbsp;nghiệp mình?</h2>
       <span class="b-head-line" aria-hidden="true"></span>
     </div>
 
@@ -4326,7 +4455,7 @@ body{
             </li>
             <li>
               <span class="b-pcheck"><svg class="ico"><use href="#i-check"/></svg></span>
-              <span>Phát hiện biến động bất thường, nhận gợi ý hướng xử lý và điều chỉnh.</span>
+              <span>Phát hiện biến động bất thường, nhận gợi ý xử lý kịp thời.</span>
             </li>
             <li>
               <span class="b-pcheck"><svg class="ico"><use href="#i-check"/></svg></span>
@@ -4552,9 +4681,9 @@ body{
       <p class="lead">Được phát triển từ những bài toán vận hành thực tế, đây chính là cách mà INPRO.vn vận hành và hướng tới hỗ trợ các doanh nghiệp kiểm soát chi phí và gia tăng lợi nhuận.</p>
     </div>
 
-    <!-- 3A + 3B: 1 BÊN ẢNH LỚN FOUNDER CEO THÀNH ĐỊNH · 1 BÊN NỘI DUNG CÂU CHUYỆN & HỆ SINH THÁI AI -->
+    <!-- 3A + 3B: 1 BÊN ẢNH LỚN FOUNDER & CHAIRMAN THANH ĐỊNH · 1 BÊN NỘI DUNG CÂU CHUYỆN & HỆ SINH THÁI AI -->
     <div class="founder-showcase rv">
-      <!-- Cột Trái: Chân dung lớn Founder CEO Thành Định + Hào quang Tím Bingle -->
+      <!-- Cột Trái: Chân dung lớn Founder & Chairman Thanh Định + Hào quang Tím Bingle -->
       <div class="founder-portrait-stage">
         <div class="founder-wave-bg" aria-hidden="true">
           <svg viewBox="0 0 520 580" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -4573,12 +4702,12 @@ body{
         </div>
 
         <div class="founder-portrait-card">
-          <img src="assets/real/founder-dang-thanh-dinh.jpg" alt="Founder INPRO.vn – CEO Đặng Thành Định" loading="lazy" width="1200" height="1200">
+          <img src="assets/real/founder-dang-thanh-dinh.jpg" alt="Founder &amp; Chairman INPRO.vn – Đặng Thanh Định" loading="lazy" width="1200" height="1200">
         </div>
 
         <div class="founder-nameplate">
-          <span class="founder-role-tag">FOUNDER &amp; CEO</span>
-          <b>Founder INPRO.vn – CEO Thành Định</b>
+          <span class="founder-role-tag">FOUNDER &amp; CHAIRMAN</span>
+          <b>Founder INPRO.vn – Chairman Thanh Định</b>
           <span>Chủ tịch Hệ sinh thái bán lẻ Nonelab</span>
           <div class="founder-brand-pills" aria-label="4 thương hiệu thuộc Nonelab">
             <i>Mistory</i><i>Nerman</i><i>Lion Bartender</i><i>MENOW</i>
@@ -4591,7 +4720,7 @@ body{
         <!-- Khối 1: Câu chuyện thực chiến từ Founder -->
         <div class="fn-story-card">
           <span class="section-tag">TỪ TRẢI NGHIỆM ĐIỀU HÀNH THỰC CHIẾN</span>
-          <p class="fn-lead"><strong>Founder INPRO.vn – CEO Thành Định</strong> từng đối mặt với những khó khăn trong quản lý dữ liệu, nhân sự và dòng tiền.</p>
+          <p class="fn-lead"><strong>Founder &amp; Chairman INPRO.vn – Thanh Định</strong> từng đối mặt với những khó khăn trong quản lý dữ liệu, nhân sự và dòng tiền.</p>
           <p>Thấu hiểu những vấn đề này từ chính trải nghiệm điều hành, anh đã phát triển INPRO.vn trước hết để giải quyết nhu cầu quản trị của doanh nghiệp mình. Hiện nay, phần mềm đã được mở rộng để hỗ trợ các nhà bán hàng với sứ mệnh <strong>"Tăng lời, vững lãi"</strong>.</p>
         </div>
 
@@ -4605,6 +4734,64 @@ body{
           </div>
           <p>Để công nghệ xử lý những công việc lặp lại, nhân sự tập trung vào những quyết định quan trọng.</p>
           <p>Đồng thời, việc tập trung dữ liệu, chuẩn hóa quy trình và từng bước tích lũy tri thức vận hành trên hệ thống còn hướng tới một giá trị lâu dài: <strong>giảm sự phụ thuộc vào từng cá nhân, hạn chế thất thoát kinh nghiệm khi nhân sự thay đổi và duy trì tính kế thừa trong hoạt động doanh nghiệp.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3B-2. Đội ngũ Lãnh đạo & Đồng sáng lập INPRO.vn (4 Cột Chân dung ngang hàng) -->
+    <div class="leaders-showcase rv" id="leadership">
+      <div class="leaders-head">
+        <span class="section-tag">ĐỘI NGŨ LÃNH ĐẠO &amp; ĐỒNG SÁNG LẬP</span>
+        <h3>Đội ngũ lãnh&nbsp;đạo đứng sau hệ&nbsp;sinh&nbsp;thái <strong class="hl">INPRO.vn</strong></h3>
+      </div>
+
+      <div class="leaders-grid">
+        <!-- 1. Thanh Định -->
+        <div class="leader-card">
+          <div class="leader-photo">
+            <img src="assets/thanh-dinh.png" alt="Thanh Định – Founder &amp; Chairman INPRO.vn" loading="lazy" width="800" height="1000">
+          </div>
+          <div class="leader-info">
+            <span class="leader-role">FOUNDER &amp; CHAIRMAN</span>
+            <h4>Thanh Định</h4>
+            <p>Chủ tịch Hệ sinh thái bán lẻ Nonelab</p>
+          </div>
+        </div>
+
+        <!-- 2. Vũ Bảo Thắng -->
+        <div class="leader-card">
+          <div class="leader-photo">
+            <img src="assets/vu-bao-thang.jpg" alt="Vũ Bảo Thắng – Co-founder &amp; CEO INPRO.vn" loading="lazy" width="800" height="1000">
+          </div>
+          <div class="leader-info">
+            <span class="leader-role">CO-FOUNDER &amp; CEO</span>
+            <h4>Vũ Bảo Thắng</h4>
+            <p>Đồng sáng lập &amp; Giám đốc Điều hành</p>
+          </div>
+        </div>
+
+        <!-- 3. Bao Nguyen (Nguyễn Bảo) -->
+        <div class="leader-card">
+          <div class="leader-photo">
+            <img src="assets/nguyen-bao.jpg" alt="Bao Nguyen (Nguyễn Bảo) – Co-founder &amp; CTO INPRO.vn" loading="lazy" width="800" height="1000">
+          </div>
+          <div class="leader-info">
+            <span class="leader-role">CO-FOUNDER &amp; CTO</span>
+            <h4>Bao Nguyen</h4>
+            <p>Đồng sáng lập &amp; Giám đốc Công nghệ</p>
+          </div>
+        </div>
+
+        <!-- 4. Đào Anh Quân (Anh Quân) -->
+        <div class="leader-card">
+          <div class="leader-photo">
+            <img src="assets/dao-anh-quan.jpg" alt="Đào Anh Quân (Anh Quân) – Co-founder &amp; COO INPRO.vn" loading="lazy" width="800" height="1000">
+          </div>
+          <div class="leader-info">
+            <span class="leader-role">CO-FOUNDER &amp; COO</span>
+            <h4>Đào Anh Quân</h4>
+            <p>Đồng sáng lập &amp; Giám đốc Vận hành</p>
+          </div>
         </div>
       </div>
     </div>
@@ -5273,7 +5460,26 @@ body{
     </div>
 
     <div class="pg">
-      <!-- Gói 1: Quản Lý -->
+      <!-- Gói 1 (Ưu tiên đầu tiên trên Mobile): Full Suite (Nổi bật) -->
+      <div class="pr hot rv">
+        <span class="rb">HIỆU QUẢ VẬN HÀNH X100 LẦN</span>
+        <h3>INPRO.vn OS Full Suite</h3>
+        <div class="d">Trọn bộ Quản Lý × Vận Kho toàn diện nhất.</div>
+        <div class="price">129tr<small> /năm</small></div>
+        <div class="pmeta">Trả tháng: 12,9tr/tháng · Setup 35tr</div>
+        <div class="gift"><svg class="ico"><use href="#i-gift"/></svg>Trả trước 12 tháng: tặng 100% Setup</div>
+        <ul>
+          <li><strong>Trọn bộ 6 phân hệ Quản Lý:</strong> Dashboard realtime, Lợi nhuận, Ads AI, KOC/Affiliate, CSKH &amp; B2B</li>
+          <li><strong>Trọn bộ 6 tính năng Kho Vận (WMS):</strong> Quản lý tồn kho SKU, Wave Picking, tự động in đơn &amp; quà tặng</li>
+          <li><strong>Đồng bộ liền mạch Quản Lý ⇄ Vận Kho:</strong> Tự động trừ tồn đa sàn và đối soát giá vốn – lãi lỗ tức thì</li>
+          <li><strong>Luồng chiến dịch KOC tự động xuống Kho:</strong> Đẩy đơn gửi mẫu Creator và theo dõi giao nhận 1 màn hình</li>
+          <li><strong>Trợ lý AI &amp; Cảnh báo vận hành toàn diện:</strong> Phát hiện sớm biến động chi phí Ads, đơn trễ, lệch tồn kho</li>
+          <li><strong>Tiết kiệm 9.000.000đ/năm so với mua lẻ:</strong> Ưu tiên triển khai VIP &amp; cấu hình đa thương hiệu chuyên sâu</li>
+        </ul>
+        <a href="#register" class="btn btn-p" data-package="INPRO.vn OS Full Suite">Đăng ký tư vấn gói phù hợp</a>
+      </div>
+
+      <!-- Gói 2: Quản Lý -->
       <div class="pr rv">
         <h3>INPRO.vn OS Quản Lý</h3>
         <div class="d">Thấy rõ doanh thu, nắm chắc lợi nhuận thực.</div>
@@ -5289,22 +5495,6 @@ body{
           <li>B2B &amp; System: B2B, phân quyền, cảnh báo</li>
         </ul>
         <a href="#register" class="btn btn-o" data-package="INPRO.vn OS Quản Lý">Đăng ký tư vấn gói phù hợp</a>
-      </div>
-
-      <!-- Gói 2: Full Suite (Nổi bật) -->
-      <div class="pr hot rv">
-        <span class="rb">HIỆU QUẢ VẬN HÀNH X100 LẦN</span>
-        <h3>INPRO.vn OS Full Suite</h3>
-        <div class="d">Trọn bộ Quản Lý × Vận Kho.</div>
-        <div class="price">129tr<small> /năm</small></div>
-        <div class="pmeta">Trả tháng: 12,9tr/tháng · Setup 35tr</div>
-        <div class="gift"><svg class="ico"><use href="#i-gift"/></svg>Trả trước 12 tháng: tặng 100% Setup</div>
-        <ul>
-          <li>Trọn bộ tính năng phân hệ INPRO.vn OS Quản Lý</li>
-          <li>Trọn bộ tính năng phân hệ INPRO.vn OS Kho Vận</li>
-          <li>Dữ liệu liền mạch từ quản lý đến kho</li>
-        </ul>
-        <a href="#register" class="btn btn-p" data-package="INPRO.vn OS Full Suite">Đăng ký tư vấn gói phù hợp</a>
       </div>
 
       <!-- Gói 3: Kho Vận -->
@@ -5498,28 +5688,28 @@ body{
         <a href="#top" class="footer-logo" aria-label="INPRO.vn">
           <img src="assets/inpro-ngang.png" alt="INPRO.vn" width="168" height="26">
         </a>
-        <div class="fname">INPRO.vn · Hệ sinh thái Nonelab</div>
-        <p>Hệ thống quản trị doanh nghiệp thông minh, kiến tạo năng lực sinh lời bền vững.<br><b>Tăng lời, vững lãi.</b> Earn More. Keep More. Increase Profit.</p>
+        <div class="fname">INPRO.vn – Phần mềm AI hỗ trợ nhà bán hàng tăng trưởng lợi nhuận</div>
+        <p><b>Tăng lời, vững lãi.</b> Earn More. Keep More. Increase Profit.</p>
         <div class="ct"><svg class="ico"><use href="#i-pin"/></svg><span>111 Cù Chính Lan, Phương Liệt, Hà Nội</span></div>
         <div class="ct"><svg class="ico"><use href="#i-phone"/></svg><a href="tel:0925376699">0925 376 699 (Hotline)</a></div>
         <div class="ct"><svg class="ico"><use href="#i-mail"/></svg><a href="mailto:info@inpro.vn">info@inpro.vn</a></div>
       </div>
       <div>
         <h3 class="fhead">Giải pháp</h3>
-        <a class="flink" href="#solutions">Bài toán dòng tiền &amp; 3 chữ "1"</a>
-        <a class="flink" href="#x100-ops">Quản lý × Vận kho X100</a>
+        <a class="flink" href="#inpro-pillars">3 Trụ cột giải pháp</a>
+        <a class="flink" href="#x100-ops">Quản lý × Vận kho x100</a>
         <a class="flink" href="#tools">Bộ công cụ 9 giải pháp</a>
         <a class="flink" href="#pricing">Bảng giá dịch vụ</a>
       </div>
       <div>
         <h3 class="fhead">Về INPRO.vn</h3>
-        <a class="flink" href="#why">Vì sao lựa chọn INPRO.vn?</a>
-        <a class="flink" href="#demo">Video giới thiệu hệ thống</a>
+        <a class="flink" href="#why">Đội ngũ &amp; Câu chuyện</a>
+        <a class="flink" href="#brandCases">Case Study thương hiệu</a>
+        <a class="flink" href="#demo">Video vận hành thực tế</a>
         <a class="flink" href="#register">Đăng ký trải nghiệm Demo</a>
-        <a class="flink" href="https://zalo.me/925376699" target="_blank" rel="noopener">Chat Zalo trực tiếp</a>
       </div>
     </div>
-    <div class="copy">© 2026 INPRO.vn · Hệ sinh thái Nonelab. All rights reserved.</div>
+    <div class="copy">© 2026 INPRO.vn – Phần mềm AI hỗ trợ nhà bán hàng tăng trưởng lợi nhuận. All rights reserved.</div>
   </div>
 </footer>
 
@@ -6016,6 +6206,40 @@ function stepBrandSlide(dir){
     const x = e.pageX - track.offsetLeft;
     track.scrollLeft = scrollLeft - (x - startX) * 1.4;
   });
+})();
+
+// ScrollSpy for Navigation Bar active link highlighting
+(function initNavScrollSpy(){
+  const navLinks = Array.from(document.querySelectorAll('.menu-links a[href^="#"]'));
+  if(!navLinks.length) return;
+  const targets = [
+    { id: 'solutions', href: '#inpro-pillars' },
+    { id: 'inpro-pillars', href: '#inpro-pillars' },
+    { id: 'x100-ops', href: '#x100-ops' },
+    { id: 'why', href: '#why' },
+    { id: 'leadership', href: '#why' },
+    { id: 'brandCases', href: '#brandCases' },
+    { id: 'tools', href: '#tools' },
+    { id: 'pricing', href: '#pricing' }
+  ];
+  function updateActiveNav(){
+    const y = window.scrollY + 140;
+    let activeHref = '';
+    for(const item of targets){
+      const el = document.getElementById(item.id);
+      if(el){
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        if(y >= top){
+          activeHref = item.href;
+        }
+      }
+    }
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === activeHref);
+    });
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
 })();
 </script>
 </body>
